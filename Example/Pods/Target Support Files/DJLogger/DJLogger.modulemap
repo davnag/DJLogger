@@ -1,0 +1,6 @@
+framework module DJLogger {
+  umbrella header "DJLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

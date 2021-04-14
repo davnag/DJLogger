@@ -1,0 +1,16 @@
+PODS:
+  - DJLogger (0.1.0)
+
+DEPENDENCIES:
+  - DJLogger (from `../`)
+
+EXTERNAL SOURCES:
+  DJLogger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DJLogger: 36a102ff656704dc8cf9dc2c5412822e6db89c38
+
+PODFILE CHECKSUM: 2ce40732cfe341972e598ec7a54822c5e0ec797c
+
+COCOAPODS: 1.10.1
