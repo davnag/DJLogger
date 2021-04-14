@@ -323,6 +323,7 @@ extension DJLLogViewController: UIAdaptivePresentationControllerDelegate {
     
     public func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
         
+        refreshLogs()
         setupBarButtonItems()
         startRefreshTimer()
     }
