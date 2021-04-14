@@ -24,13 +24,11 @@
 
 import Foundation
 
-// MARK: - Read Log
-
-struct DJLFileReader {
+public struct DJLFileReader {
   
     static let queue = DispatchQueue(label: "DJLFileReader.readLogsFiles")
     
-    static func readLogsFiles(completion: @escaping ([DJLFileLog]) -> Void) {
+    public static func readLogsFiles(completion: @escaping ([DJLFileLog]) -> Void) {
         
         var logFiles = [DJLFileLog]()
 
@@ -65,7 +63,7 @@ struct DJLFileReader {
         }
     }
     
-    static func removeAllLogFiles(completion: @escaping () -> Void) {
+    public static func removeAllLogFiles(completion: @escaping () -> Void) {
         
         queue.async {
             
