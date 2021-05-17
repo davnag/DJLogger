@@ -25,22 +25,6 @@
 import Combine
 import UIKit
 
-public final class DJLLogFilterSettings {
-    
-    public var labels: [String] = []
-    public var selectedLabels: [String] = []
-    public var levels: [DJLLogger.Level] = DJLLogger.Level.allCases
-    
-    var active: Bool {
-        if selectedLabels.isEmpty == false {
-            return true
-        }
-        return levels.count != DJLLogger.Level.allCases.count
-    }
-}
-
-
-
 public final class DJLLogViewController: UITableViewController {
     
     private struct DJLLogSection {
@@ -57,6 +41,8 @@ public final class DJLLogViewController: UITableViewController {
     
     private var folderMonitor: DJLFolderMonitor?
     private var folderChangedCancellable: AnyCancellable?
+    
+    private var previewHandler: DJLPreviewHandler?
     
     public init() {
         super.init(style: .insetGrouped)
@@ -116,13 +102,31 @@ extension DJLLogViewController {
         if settings.active {
             navigationItem.leftBarButtonItems = [
                 UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction)),
-                UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle.fill"), style: .plain, target: self, action: #selector(filterButtonAction))
+                setupFilterBarButtonItem(),
+                setupPlayPauseBarButtonItem()
             ]
         } else {
             navigationItem.leftBarButtonItems = [
                 UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction)),
-                UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonAction))
+                setupFilterBarButtonItem(),
+                setupPlayPauseBarButtonItem()
             ]
+        }
+    }
+    
+    private func setupFilterBarButtonItem() -> UIBarButtonItem {
+        if settings.active {
+            return UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle.fill"), style: .plain, target: self, action: #selector(filterButtonAction))
+        } else {
+            return UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonAction))
+        }
+    }
+    
+    private func setupPlayPauseBarButtonItem() -> UIBarButtonItem {
+        if settings.isPaused {
+            return UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(playPauseButtonAction))
+        } else {
+            return UIBarButtonItem(image: UIImage(systemName: "pause.fill"), style: .plain, target: self, action: #selector(playPauseButtonAction))
         }
     }
 }
@@ -180,7 +184,11 @@ extension DJLLogViewController {
     }
     
     private func startRefreshTimer() {
-        refreshLogsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in self.refreshLogs() }
+        refreshLogsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if self.settings.isPaused == false {
+                self.refreshLogs()
+            }
+        }
     }
     
     private func stopRefreshTimer() {
@@ -191,24 +199,44 @@ extension DJLLogViewController {
 // MARK: - Actions
 
 extension DJLLogViewController {
-    
-    @objc
-    private func filterButtonAction() {
-        
-        stopRefreshTimer()
-        
-        let controller = DJLLogFilterViewController(settings: settings)
-        let navController = UINavigationController(rootViewController: controller)
-        navController.presentationController?.delegate = self
-        present(navController, animated: true)
-    }
-    
+
     @objc
     private func menuButtonAction() {
 
         stopRefreshTimer()
         
         let controller = UIAlertController(title: "Logs", message: nil, preferredStyle: .actionSheet)
+        
+        controller.addAction(UIAlertAction(title: "Logs information", style: .default) { _ in
+            
+            let size = DJLFileReader.logFileSize() ?? "Error"
+            
+            let message = "Total file sizes: \(size)"
+            
+            let controller = UIAlertController(title: "Logs information", message: message, preferredStyle: .alert)
+
+            controller.addAction(UIAlertAction(title: "Close", style: .cancel) { _ in
+                self.startRefreshTimer()
+            })
+            
+            self.present(controller, animated: true)
+            
+        })
+        
+        controller.addAction(UIAlertAction(title: "View log files", style: .default) { [self] _ in
+            
+            guard let files = try? DJLFileReader.logFilesURLs() else {
+                return
+            }
+            
+            let items = files.compactMap({ DJLPreviewHandler.PreviewItem(title: $0.lastPathComponent, url: $0) })
+            
+            self.previewHandler = DJLPreviewHandler(items: items) {
+                self.startRefreshTimer()
+                self.previewHandler = nil
+            }
+            self.previewHandler?.present(parent: self)
+        })
         
         controller.addAction(UIAlertAction(title: "Clear All Logs", style: .destructive) { _ in
             
@@ -231,6 +259,24 @@ extension DJLLogViewController {
         })
         
         present(controller, animated: true)
+    }
+    
+    @objc
+    private func filterButtonAction() {
+        
+        stopRefreshTimer()
+        
+        let controller = DJLLogFilterViewController(settings: settings)
+        let navController = UINavigationController(rootViewController: controller)
+        navController.presentationController?.delegate = self
+        present(navController, animated: true)
+    }
+    
+    @objc
+    private func playPauseButtonAction() {
+        
+        settings.isPaused.toggle()
+        setupBarButtonItems()
     }
     
     @objc
@@ -292,10 +338,9 @@ extension DJLLogViewController {
         let item = sections[indexPath.section].items[indexPath.row]
       
         let actionProvider: UIContextMenuActionProvider = { _ in
-            
             let editMenu = UIMenu(title: "Edit...", children: [
                 UIAction(title: "Copy") { _ in
-                    let description = item.description
+                    let description = item.logText()
                     UIPasteboard.general.string = description
                 }
             ])
@@ -304,6 +349,12 @@ extension DJLLogViewController {
                     let description = item.logText()
                     let controller = UIActivityViewController(activityItems: [description], applicationActivities: nil)
                     self?.present(controller, animated: true)
+                },
+                UIAction(title: "Open log file") { [weak self] _ in
+                    if let self = self {
+                        let preview = DJLPreviewHandler(items: [.init(title: item.label, url: item.fileURL)])
+                        preview.present(parent: self)
+                    }
                 },
                 editMenu
             ])

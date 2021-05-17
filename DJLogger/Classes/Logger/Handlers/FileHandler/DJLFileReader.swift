@@ -24,25 +24,33 @@
 
 import Foundation
 
+
 public struct DJLFileReader {
-  
-    static let queue = DispatchQueue(label: "DJLFileReader.readLogsFiles")
     
+    public enum DJLFileReaderError: Error {
+        case noPath
+    }
+  
+    private static let queue = DispatchQueue(label: "DJLFileReader.readLogsFiles")
+    
+    public static func logFilesURLs() throws -> [URL] {
+        
+        guard let path = DJLFileHandlerConfiguration.path() else {
+            throw DJLFileReaderError.noPath
+        }
+        
+        return try FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil, options: [])
+    }
+
     public static func readLogsFiles(completion: @escaping ([DJLFileLog]) -> Void) {
         
         var logFiles = [DJLFileLog]()
 
-        guard let path = DJLFileHandlerConfiguration.path() else {
-            completion(logFiles)
-            return
-        }
-
         queue.async {
+            
             do {
-                
-                let fileURLs = try FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil, options: [])
-                
-                for fileURL in fileURLs {
+
+                for fileURL in try DJLFileReader.logFilesURLs() {
                     
                     if let fileContent = try? String(contentsOf: fileURL, encoding: .utf8) {
     
@@ -52,7 +60,7 @@ public struct DJLFileReader {
                             .map { (index: $0.offset, content: $0.element.components(separatedBy: ";")) }
                             .compactMap {  DJLFileLog(fileURL: fileURL, index: $0.index, content: $0.content) }
                         
-                        logFiles += logs
+                        logFiles += logs.suffix(500)
                     }
                 }
             } catch {
@@ -67,16 +75,9 @@ public struct DJLFileReader {
         
         queue.async {
             
-            guard let path = DJLFileHandlerConfiguration.path() else {
-                completion()
-                return
-            }
-            
             do {
                 
-                let fileURLs = try FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil, options: [])
-                
-                for fileURL in fileURLs {
+                for fileURL in try DJLFileReader.logFilesURLs() {
                     do {
                         try FileManager.default.removeItem(at: fileURL)
                     } catch {
@@ -85,10 +86,33 @@ public struct DJLFileReader {
                 }
                 
             } catch {
-                print(error.localizedDescription)
+                print(error)
             }
             
             completion()
         }
+    }
+    
+    public static func logFileSize() -> String? {
+        
+        var byteCountFormatter: ByteCountFormatter {
+            let byteCountFormatter = ByteCountFormatter()
+            byteCountFormatter.allowedUnits = [.useMB]
+            byteCountFormatter.countStyle = .file
+            return byteCountFormatter
+        }
+        
+        var totalFileSize: Int64 = 0
+
+        do {
+            
+            let fileURLs = try DJLFileReader.logFilesURLs()
+            totalFileSize = fileURLs.reduce(0) { $0 + (FileManager.default.sizeOfFile(atPath: $1.path) ?? 0) }
+
+        } catch {
+            print(error)
+        }
+        
+        return byteCountFormatter.string(fromByteCount: totalFileSize)
     }
 }

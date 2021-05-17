@@ -16,6 +16,9 @@
 		3C256338262457F200BFADD3 /* DJLFileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25632F262457F200BFADD3 /* DJLFileLog.swift */; };
 		3C256339262457F200BFADD3 /* DJLFolderMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */; };
 		3C25633A262457F200BFADD3 /* DJLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256331262457F200BFADD3 /* DJLLogger.swift */; };
+		3C305F0426529AEE00C0621B /* DJLPreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */; };
+		3C305F082652A62800C0621B /* DJLLogFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */; };
+		3C305F0A2652AF1C00C0621B /* FileManager+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F092652AF1C00C0621B /* FileManager+extensions.swift */; };
 		3C7FF6B426270B8C009CAC1D /* DJLLogHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6B326270B8C009CAC1D /* DJLLogHandlerProtocol.swift */; };
 		3C7FF6BC26270DC5009CAC1D /* DJLFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6BB26270DC5009CAC1D /* DJLFileReader.swift */; };
 		3C7FF6C126270DE3009CAC1D /* DJLFileHandlerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6C026270DE3009CAC1D /* DJLFileHandlerConfiguration.swift */; };
@@ -68,6 +71,9 @@
 		3C25632F262457F200BFADD3 /* DJLFileLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLFileLog.swift; sourceTree = "<group>"; };
 		3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLFolderMonitor.swift; sourceTree = "<group>"; };
 		3C256331262457F200BFADD3 /* DJLLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogger.swift; sourceTree = "<group>"; };
+		3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLPreviewHandler.swift; sourceTree = "<group>"; };
+		3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogFilterSettings.swift; sourceTree = "<group>"; };
+		3C305F092652AF1C00C0621B /* FileManager+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+extensions.swift"; sourceTree = "<group>"; };
 		3C7FF6B326270B8C009CAC1D /* DJLLogHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogHandlerProtocol.swift; sourceTree = "<group>"; };
 		3C7FF6BB26270DC5009CAC1D /* DJLFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLFileReader.swift; sourceTree = "<group>"; };
 		3C7FF6C026270DE3009CAC1D /* DJLFileHandlerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLFileHandlerConfiguration.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				3C256326262457F200BFADD3 /* UI */,
 				3C25632B262457F200BFADD3 /* Handlers */,
 				3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */,
+				3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */,
 				3C7FF6CF26271CD7009CAC1D /* DJLLoggerConfiguration.swift */,
 				3C256331262457F200BFADD3 /* DJLLogger.swift */,
 			);
@@ -218,6 +225,7 @@
 				3C7FF6EF26273A19009CAC1D /* Array+groupByDateComponents.swift */,
 				3C7FF6F426273AC9009CAC1D /* DJLFileLog+extension.swift */,
 				3C7FF6D826272089009CAC1D /* DJLLogger+extensions.swift */,
+				3C305F092652AF1C00C0621B /* FileManager+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 		3C7FF6F926273AE6009CAC1D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -495,6 +504,7 @@
 			files = (
 				3C7FF6B426270B8C009CAC1D /* DJLLogHandlerProtocol.swift in Sources */,
 				55A07443DE680D87E4D979E018B9592A /* DJLogger-dummy.m in Sources */,
+				3C305F0426529AEE00C0621B /* DJLPreviewHandler.swift in Sources */,
 				3C7FF6D926272089009CAC1D /* DJLLogger+extensions.swift in Sources */,
 				3C25633A262457F200BFADD3 /* DJLLogger.swift in Sources */,
 				3C256339262457F200BFADD3 /* DJLFolderMonitor.swift in Sources */,
@@ -507,7 +517,9 @@
 				3C7FF6BC26270DC5009CAC1D /* DJLFileReader.swift in Sources */,
 				3C256333262457F200BFADD3 /* DJLLogCell.swift in Sources */,
 				3C256338262457F200BFADD3 /* DJLFileLog.swift in Sources */,
+				3C305F082652A62800C0621B /* DJLLogFilterSettings.swift in Sources */,
 				3C7FF6D026271CD7009CAC1D /* DJLLoggerConfiguration.swift in Sources */,
+				3C305F0A2652AF1C00C0621B /* FileManager+extensions.swift in Sources */,
 				3C256334262457F200BFADD3 /* DJLLogViewController.swift in Sources */,
 				3C256336262457F200BFADD3 /* DJLConsoleHandler.swift in Sources */,
 			);
