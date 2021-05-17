@@ -44,8 +44,9 @@ extension DJLConsoleHandler: DJLLogHandler {
         let date = DJLLoggerConfiguration.dateFormatter.string(from: Date())
         
         var log = ""
-        log += "\(label) | "
-        log += "\(date) | \(level.name)"
+        log += "\(date)"
+        log += " | \(level.name)"
+        log += " | \(label)"
         log += " | \(file) (\(line))"
         log += " -> \(function)"
         log += " > \(message)\n"

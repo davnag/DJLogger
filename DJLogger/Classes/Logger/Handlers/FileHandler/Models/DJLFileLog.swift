@@ -43,17 +43,7 @@ public struct DJLFileLog: Identifiable {
     public let file: String
     public let function: String
     public let message: String
-    
-    public var description: String {
-        var text = ""
-        text += "\(label) | "
-        text += "\(date) | \(level.name)"
-        text += " | \(file))"
-        text += " -> \(function)"
-        text += " > \(message)\n"
-        return text
-    }
-    
+
     init?(fileURL: URL, index: Int, content: [String]) {
         
         self.index = index
@@ -77,5 +67,39 @@ public struct DJLFileLog: Identifiable {
         self.file = content[3]
         self.function = content[4]
         self.message = content[5]
+    }
+}
+
+extension DJLFileLog {
+    
+    public func logText() -> String {
+
+        var log = ""
+        log += "\(date)"
+        log += " | \(level.name)"
+        log += " | \(label)"
+        log += " | \(file)"
+        log += " -> \(function)"
+        log += " > \(message)\n"
+        
+        return log
+    }
+}
+
+extension DJLFileLog: CustomStringConvertible {
+    
+    public var description: String {
+
+        var log = ""
+        log += "\(date)"
+        log += " | \(level.name)"
+        log += " | \(label)"
+        log += " | \(file)"
+        log += " -> \(function)"
+        log += " > \(message)\n"
+        
+        log += "\nFile: \(fileURL)"
+        
+        return log
     }
 }
