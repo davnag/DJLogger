@@ -24,30 +24,45 @@
 
 import Foundation
 
+/// Creates a DJLLogHandler that will write log to the file named  as `fileName`.
+///
+/// This example creates two instances of `DJLFileHandler`,
+/// one with default file extension and the other with a value
+/// you specify in  as `fileExtension`.
+///
+///     let fileHandler = DJLFileHandler("Log")
+///     let fileHandler = DJLFileHandler("Log", fileExtension: "log")
+///
 public class DJLFileHandler {
     
     private let fileName: String
     private let fileExtension: String
     
-    /// Create a File Handler that write to a file.
+    /// Creates a DJLLogHandler that will write log to the file named  as `fileName`.
+    ///
+    /// This example creates two instances of `DJLFileHandler`,
+    /// one with default file extension and the other with a value
+    /// you specify in  as `fileExtension`.
+    ///
+    ///     let fileHandler = DJLFileHandler("Log")
+    ///     let fileHandler = DJLFileHandler("Log", fileExtension: "log")
+    ///
     /// - Parameter fileName: File name without file extension.
-    /// - Parameter fileExtension: File extension.
+    /// - Parameter fileExtension: File extension without `.`.
+    ///
+    /// - Returns: A `DJLFileHandler` to add to a `DJLLogger`.
     public init(_ fileName: String, fileExtension: String = "log") {
         
         self.fileName = fileName
+        self.fileExtension = fileExtension
         
-        if fileExtension.contains(".") {
-            self.fileExtension = fileExtension
-        } else {
-            self.fileExtension = ".\(fileExtension)"
-        }
     }
 }
 
 // MARK: - DJLLogHandler
 
 extension DJLFileHandler: DJLLogHandler {
-  
+
     public func log(label: String,
                     level: DJLLogger.Level,
                     message: String,

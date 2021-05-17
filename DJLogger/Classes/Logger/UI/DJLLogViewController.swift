@@ -292,6 +292,7 @@ extension DJLLogViewController {
         let item = sections[indexPath.section].items[indexPath.row]
       
         let actionProvider: UIContextMenuActionProvider = { _ in
+            
             let editMenu = UIMenu(title: "Edit...", children: [
                 UIAction(title: "Copy") { _ in
                     let description = item.description
@@ -300,7 +301,7 @@ extension DJLLogViewController {
             ])
             return UIMenu(title: "Log", children: [
                 UIAction(title: "Share") { [weak self] _ in
-                    let description = item.description
+                    let description = item.logText()
                     let controller = UIActivityViewController(activityItems: [description], applicationActivities: nil)
                     self?.present(controller, animated: true)
                 },
