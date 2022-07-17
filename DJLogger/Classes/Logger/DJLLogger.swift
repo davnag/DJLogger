@@ -55,7 +55,7 @@ extension DJLLogger {
                     _ message: @autoclosure () -> String,
                     file: String = #fileID, function: String = #function, line: UInt = #line) {
         
-        if self.logLevel <= level {
+        if DJLLoggerConfiguration.logEnabled, self.logLevel <= level {
             self.handlers.forEach {
                 $0.log(label: label, level: level, message: message(), file: file, function: function, line: line)
             }

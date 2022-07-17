@@ -97,7 +97,7 @@ public struct DJLFileReader {
         
         var byteCountFormatter: ByteCountFormatter {
             let byteCountFormatter = ByteCountFormatter()
-            byteCountFormatter.allowedUnits = [.useMB]
+            byteCountFormatter.allowedUnits = [.useKB, .useMB]
             byteCountFormatter.countStyle = .file
             return byteCountFormatter
         }

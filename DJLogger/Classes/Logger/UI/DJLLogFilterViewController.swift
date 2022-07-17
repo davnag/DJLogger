@@ -78,7 +78,7 @@ extension DJLLogFilterViewController {
     func setupViewController() {
 
         title = "Filters"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
 
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .plain, target: self, action: #selector(actionCloseButton))

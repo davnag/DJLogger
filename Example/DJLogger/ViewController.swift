@@ -36,6 +36,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //DJLLoggerConfiguration.logEnabled = false
+        
         logger.debug("View Did Load")
 
         becomeFirstResponder()

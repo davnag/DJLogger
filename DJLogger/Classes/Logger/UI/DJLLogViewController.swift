@@ -25,19 +25,70 @@
 import Combine
 import UIKit
 
+final class DJLLogViewHeaderView: UIView {
+    
+    public lazy var messageLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.adjustsFontForContentSizeCategory = true
+        view.adjustsFontSizeToFitWidth = true
+        view.textColor = .secondaryLabel
+        view.numberOfLines = 0
+        view.font = .preferredFont(forTextStyle: .caption1)
+        return view
+    }()
+    
+    init() {
+        super.init(frame: .zero)
+        
+        setupSubviews()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Setup
+    
+    private func setupSubviews() {
+        addSubview(messageLabel)
+    }
+    
+    private func setupConstraints() {
+        preservesSuperviewLayoutMargins = true
+        
+        NSLayoutConstraint.activate([
+            messageLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
+            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+        ])
+    }
+}
+
 public final class DJLLogViewController: UITableViewController {
     
     private struct DJLLogSection {
         let date: Date
         let items: [DJLFileLog]
     }
+    
+    private lazy var headerView: DJLLogViewHeaderView = {
+        let view = DJLLogViewHeaderView()
+        view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 26)
+        return view
+    }()
 
     private var logs: [DJLFileLog] = []
     
     private var sections: [DJLLogSection] = []
     private var settings = DJLLogFilterSettings()
     
+    private var isRequestingLogs: Bool = false
+    private var logsLoadTime: Int = 0
     private var refreshLogsTimer: Timer?
+    private var refreshLogsStatusTimer: Timer?
     
     private var folderMonitor: DJLFolderMonitor?
     private var folderChangedCancellable: AnyCancellable?
@@ -56,9 +107,6 @@ public final class DJLLogViewController: UITableViewController {
         super.viewDidLoad()
 
         setupViewController()
-        
-        refreshLogs()
-        startRefreshTimer()
         setupBarButtonItems()
         
 //        if let path = DJLFileHandler.path() {
@@ -72,11 +120,20 @@ public final class DJLLogViewController: UITableViewController {
 //            folderMonitor?.startMonitoring()
 //        }
     }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refreshLogs()
+        refreshLogUsage()
+        startRefreshTimer()
+    }
 
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         refreshLogsTimer?.invalidate()
+        refreshLogsStatusTimer?.invalidate()
     }
 }
 
@@ -89,6 +146,7 @@ extension DJLLogViewController {
         title = "Logs"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        tableView.tableHeaderView = headerView
         tableView.allowsSelection = false
         tableView.register(DJLLogCell.self, forCellReuseIdentifier: "DJLLogCell")
     }
@@ -99,19 +157,20 @@ extension DJLLogViewController {
             UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .plain, target: self, action: #selector(closeButtonAction))
         ]
         
-        if settings.active {
-            navigationItem.leftBarButtonItems = [
-                UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction)),
-                setupFilterBarButtonItem(),
-                setupPlayPauseBarButtonItem()
-            ]
-        } else {
-            navigationItem.leftBarButtonItems = [
-                UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction)),
-                setupFilterBarButtonItem(),
-                setupPlayPauseBarButtonItem()
-            ]
-        }
+        navigationItem.leftBarButtonItems = [
+            setupMenuBarButtonItem(),
+            setupTrashBarButtonItem(),
+            setupPlayPauseBarButtonItem(),
+            setupFilterBarButtonItem()
+        ]
+    }
+    
+    private func setupMenuBarButtonItem() -> UIBarButtonItem {
+        UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction))
+    }
+    
+    private func setupTrashBarButtonItem() -> UIBarButtonItem {
+        UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(trashButtonAction))
     }
     
     private func setupFilterBarButtonItem() -> UIBarButtonItem {
@@ -134,11 +193,68 @@ extension DJLLogViewController {
 // MARK: - Private
 
 extension DJLLogViewController {
+    
+    private func refreshLogUsage() {
+        
+        DispatchQueue.global().async {
+            
+            guard let size = DJLFileReader.logFileSize(), let logFilesURLs = try? DJLFileReader.logFilesURLs() else {
+                return
+            }
+            
+            var message = "Usage: \(size) • \(logFilesURLs.count) files"
+            
+            if self.logsLoadTime > 1 {
+                message += " • \(self.logsLoadTime)s load time"
+            }
+            
+            var height = 26
+            
+            if DJLLoggerConfiguration.logEnabled == false {
+                message = "Logging Globaly Disabled\n\(message)"
+                height = 42
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                self?.headerView.frame = CGRect(x: 0, y: 0, width: Int((self?.view.bounds.width) ?? 0), height: height)
+                self?.headerView.messageLabel.text = message
+            }
+        }
+    }
 
     private func refreshLogs() {
         
+        guard
+            settings.isPaused == false
+        else {
+            self.logsLoadTime = 0
+            return
+        }
+        
+        guard
+            isRequestingLogs == false
+        else {
+            return
+        }
+        
+        isRequestingLogs = true
+        
+        let startDate = Date()
+        
         DJLFileReader.readLogsFiles { logs in
+            
+            let endDate = Date()
+            let diffComponents = Calendar.current.dateComponents([.minute, .second], from: startDate, to: endDate)
+            self.logsLoadTime = diffComponents.second ?? 0
+            
             DispatchQueue.main.async { [weak self] in
+                self?.isRequestingLogs = false
+                
+                guard self?.settings.isPaused == false else {
+                    return
+                }
+                
                 self?.logs = logs
                 self?.updateSettingsLables(with: logs)
                 self?.filter(logs)
@@ -184,15 +300,19 @@ extension DJLLogViewController {
     }
     
     private func startRefreshTimer() {
-        refreshLogsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if self.settings.isPaused == false {
-                self.refreshLogs()
-            }
+        refreshLogsTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            self?.refreshLogs()
+        }
+        
+        refreshLogsStatusTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+            self?.refreshLogUsage()
         }
     }
     
     private func stopRefreshTimer() {
+        self.logsLoadTime = 0
         refreshLogsTimer?.invalidate()
+        refreshLogsStatusTimer?.invalidate()
     }
 }
 
@@ -206,22 +326,6 @@ extension DJLLogViewController {
         stopRefreshTimer()
         
         let controller = UIAlertController(title: "Logs", message: nil, preferredStyle: .actionSheet)
-        
-        controller.addAction(UIAlertAction(title: "Logs information", style: .default) { _ in
-            
-            let size = DJLFileReader.logFileSize() ?? "Error"
-            
-            let message = "Total file sizes: \(size)"
-            
-            let controller = UIAlertController(title: "Logs information", message: message, preferredStyle: .alert)
-
-            controller.addAction(UIAlertAction(title: "Close", style: .cancel) { _ in
-                self.startRefreshTimer()
-            })
-            
-            self.present(controller, animated: true)
-            
-        })
         
         controller.addAction(UIAlertAction(title: "View log files", style: .default) { [self] _ in
             
@@ -237,23 +341,7 @@ extension DJLLogViewController {
             }
             self.previewHandler?.present(parent: self)
         })
-        
-        controller.addAction(UIAlertAction(title: "Clear All Logs", style: .destructive) { _ in
-            
-            DJLFileReader.removeAllLogFiles {
-                
-                DispatchQueue.main.async {
-                    
-                    UINotificationFeedbackGenerator().notificationOccurred(.success)
-                    
-                    self.sections.removeAll()
-                    self.tableView.reloadData()
-                    
-                    self.startRefreshTimer()
-                }
-            }
-        })
-        
+
         controller.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
             self.startRefreshTimer()
         })
@@ -263,6 +351,7 @@ extension DJLLogViewController {
     
     @objc
     private func filterButtonAction() {
+        UISelectionFeedbackGenerator().selectionChanged()
         
         stopRefreshTimer()
         
@@ -274,14 +363,62 @@ extension DJLLogViewController {
     
     @objc
     private func playPauseButtonAction() {
+        UISelectionFeedbackGenerator().selectionChanged()
         
         settings.isPaused.toggle()
         setupBarButtonItems()
     }
     
     @objc
+    private func trashButtonAction() {
+        
+        UISelectionFeedbackGenerator().selectionChanged()
+        
+        stopRefreshTimer()
+        
+        let controller = UIAlertController(title: "Clear All Logs", message: nil, preferredStyle: .alert)
+
+        controller.addAction(UIAlertAction(title: "Yes", style: .destructive) { _ in
+            
+            self.clearAllLogs()
+        })
+        
+        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.startRefreshTimer()
+        })
+        
+        present(controller, animated: true)
+    }
+    
+    @objc
     private func closeButtonAction() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func clearAllLogs() {
+        
+        stopRefreshTimer()
+        
+        let controller = UIAlertController(title: "Removing Logs...", message: nil, preferredStyle: .alert)
+        self.present(controller, animated: true) {
+            
+            DJLFileReader.removeAllLogFiles {
+                
+                DispatchQueue.main.async {
+                    
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                    
+                    self.sections.removeAll()
+                    self.tableView.reloadData()
+                    
+                    self.refreshLogs()
+                    self.refreshLogUsage()
+                    self.startRefreshTimer()
+                    
+                    controller.dismiss(animated: true)
+                }
+            }
+        }
     }
 }
 

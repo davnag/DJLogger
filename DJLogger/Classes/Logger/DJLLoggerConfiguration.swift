@@ -26,6 +26,8 @@ import Foundation
 
 public struct DJLLoggerConfiguration {
     
+    public static var logEnabled: Bool = true
+    
     public static var dateFormat = "yyyy-MM-dd HH:mm:ss:SSS"
     
     public static var dateFormatter: DateFormatter {
