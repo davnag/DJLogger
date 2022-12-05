@@ -22,8 +22,10 @@
  THE SOFTWARE.
  */
 
-import Combine
+#if os(iOS)
+
 import UIKit
+import Combine
 
 final class DJLLogViewHeaderView: UIView {
     
@@ -517,3 +519,4 @@ extension DJLLogViewController: UIAdaptivePresentationControllerDelegate {
         startRefreshTimer()
     }
 }
+#endif

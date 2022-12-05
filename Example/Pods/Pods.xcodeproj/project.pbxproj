@@ -7,433 +7,603 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		071B172D0C8870C2F0E1EFD6E8A86D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		3C256332262457F200BFADD3 /* DJLLogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256327262457F200BFADD3 /* DJLLogFilterViewController.swift */; };
-		3C256333262457F200BFADD3 /* DJLLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256328262457F200BFADD3 /* DJLLogCell.swift */; };
-		3C256334262457F200BFADD3 /* DJLLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256329262457F200BFADD3 /* DJLLogViewController.swift */; };
-		3C256335262457F200BFADD3 /* DJLFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25632C262457F200BFADD3 /* DJLFileHandler.swift */; };
-		3C256336262457F200BFADD3 /* DJLConsoleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25632D262457F200BFADD3 /* DJLConsoleHandler.swift */; };
-		3C256338262457F200BFADD3 /* DJLFileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C25632F262457F200BFADD3 /* DJLFileLog.swift */; };
-		3C256339262457F200BFADD3 /* DJLFolderMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */; };
-		3C25633A262457F200BFADD3 /* DJLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C256331262457F200BFADD3 /* DJLLogger.swift */; };
-		3C305F0426529AEE00C0621B /* DJLPreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */; };
-		3C305F082652A62800C0621B /* DJLLogFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */; };
-		3C305F0A2652AF1C00C0621B /* FileManager+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C305F092652AF1C00C0621B /* FileManager+extensions.swift */; };
-		3C7FF6B426270B8C009CAC1D /* DJLLogHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6B326270B8C009CAC1D /* DJLLogHandlerProtocol.swift */; };
-		3C7FF6BC26270DC5009CAC1D /* DJLFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6BB26270DC5009CAC1D /* DJLFileReader.swift */; };
-		3C7FF6C126270DE3009CAC1D /* DJLFileHandlerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6C026270DE3009CAC1D /* DJLFileHandlerConfiguration.swift */; };
-		3C7FF6D026271CD7009CAC1D /* DJLLoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6CF26271CD7009CAC1D /* DJLLoggerConfiguration.swift */; };
-		3C7FF6D926272089009CAC1D /* DJLLogger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6D826272089009CAC1D /* DJLLogger+extensions.swift */; };
-		3C7FF6E8262731D2009CAC1D /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6E7262731D2009CAC1D /* PaddingLabel.swift */; };
-		3C7FF6F026273A19009CAC1D /* Array+groupByDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6EF26273A19009CAC1D /* Array+groupByDateComponents.swift */; };
-		3C7FF6F526273AC9009CAC1D /* DJLFileLog+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FF6F426273AC9009CAC1D /* DJLFileLog+extension.swift */; };
-		55A07443DE680D87E4D979E018B9592A /* DJLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F54AFE7E5A7601FBAFF2386112BAA /* DJLogger-dummy.m */; };
-		6EF32BD93CFD2A99D9A704FCAE38DFD3 /* Pods-DJLogger_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B61A582CBD769BD5DA96840C3CD343 /* Pods-DJLogger_Tests-dummy.m */; };
-		8B5C663E10F164FA060A42CD310B19A2 /* Pods-DJLogger_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D35C3DCF06373A18F74A853468B81A9 /* Pods-DJLogger_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CD7C7D96077FF6BAA0CBB03227CDC3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A0CD15EAFF7842BB6AE01107F1D1EC96 /* DJLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C5649B1D236A560A0A76337935AFEF /* DJLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A225BA23BAC6B7AB0A6555A5B043B14F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D200829629BE320DAE0A46F5F82173EA /* Pods-DJLogger_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B59C8F9DE5D720FF6FAB95ABF108938 /* Pods-DJLogger_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F10AA96825E79376DCC4D164EB222FF9 /* Pods-DJLogger_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB02F6F985867283EA0D8937672A5DF /* Pods-DJLogger_Example-dummy.m */; };
+		059D231A3C771921977A07D8C14B6101 /* DJLFileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC49354155CDB40E43DD8B2051F0EA0 /* DJLFileLog.swift */; };
+		0B0C146590F455641F4F0395479F7396 /* Pods-DJLogger_Watch_Example_App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71551E32110AF51BC7E0413FDD1D4F99 /* Pods-DJLogger_Watch_Example_App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FF1755EDDCE5671833ED4ED6C52930A /* DJLLogger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2C3FAAE4DA6E4CC07FF5601CBD50C /* DJLLogger+extensions.swift */; };
+		1141891C8AC8C16489F28FB42FBFB031 /* DJLLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A7D9FE74C4DDAE279F1BE9F14CF08 /* DJLLogView.swift */; };
+		2064D667A5815C6D777BD139BF6EA70F /* DJLFileLog+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569AB14B8044E3463B32EDCDC5E4D35 /* DJLFileLog+extension.swift */; };
+		236BF9DBAF97F1DE322D2201D307F4A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+		298BA99C9E185C1AB62E014D503C4C56 /* DJLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EEAF358BE26437BF5A9A1E4E8B55 /* DJLLogger.swift */; };
+		2DC992F9E2BD029956A8B55BFE433F03 /* DJLFolderMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60396B4649C87FC6213B605C9A32220 /* DJLFolderMonitor.swift */; };
+		2EE67ECAED4E8909546A62881A2AD300 /* DJLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EEAF358BE26437BF5A9A1E4E8B55 /* DJLLogger.swift */; };
+		371FC952FDB00A905FC1628B0D8D12B4 /* DJLFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905CFF47D3564652B8770217D98F1C3 /* DJLFileReader.swift */; };
+		3B689CDA89F135D52F500B1114B65A61 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0942BE8DE46993911C3C4D2AE9F009 /* PaddingLabel.swift */; };
+		3DE2F03CF9F57C9763DC9D04A220B458 /* DJLFileLog+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569AB14B8044E3463B32EDCDC5E4D35 /* DJLFileLog+extension.swift */; };
+		3E1C3269DC950AE18F913449C1FCA59E /* DJLFileHandlerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E747475505FD193F72D2DEEB5769E /* DJLFileHandlerConfiguration.swift */; };
+		4361069F4F0790AAA862C039F39A3F9F /* DJLPreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E61FBF46DCB8DC6CEE0BC7EABEABC /* DJLPreviewHandler.swift */; };
+		43AF93399AE64D5C216299017BE2FC38 /* Pods-DJLogger_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5601DD7FD545974E56D4224639F94B44 /* Pods-DJLogger_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43BDEFC82FECAB81FD05573C37150542 /* DJLFolderMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60396B4649C87FC6213B605C9A32220 /* DJLFolderMonitor.swift */; };
+		485CEF4A74C96B5DA68F1D06BC959CDE /* DJLogger-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FA5C84BF774DA63A446D9E606203E7 /* DJLogger-iOS-dummy.m */; };
+		4DB699580FCF693D2C65668A50895E59 /* DJLLogHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */; };
+		4E2E13178B43882DC12951B979765429 /* DJLLogHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */; };
+		4E628CCC46F56221D6EDAC5803E1448D /* Array+groupByDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76AD2B128E8CE9B7746F216A92D340 /* Array+groupByDateComponents.swift */; };
+		4FE2C003555C82052E3598DE0BBA3FA3 /* DJLLogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54314D1E71CD1AD85DC6EB81F1075D4 /* DJLLogFilterViewController.swift */; };
+		56ADC6365FC440D9961B68CBAE193456 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+		592FD14DF9CB595611030B6A7AC2AEAC /* DJLLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1757BBC591BFF3CA1572E11725D3AD8 /* DJLLogViewController.swift */; };
+		5A5E71686EAC6E8547651E92FD8E3D91 /* DJLLogFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */; };
+		5A72D31C15F2605B863DCF0E88874C8D /* DJLogger-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B7BCC06DEF30D4ACE424F7603FDED46 /* DJLogger-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64B6C084145004AF0C6FF91D31BED477 /* DJLFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963103A82769DDCA0D090E3E418C1F6D /* DJLFileHandler.swift */; };
+		6DE8436C72C4155AF89E5D40F69A007E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		76F7F735BD84BB88AF3E99CD8562616A /* DJLLoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5430410FB9CAB60ADB0CCE0D6E71BE /* DJLLoggerConfiguration.swift */; };
+		781DBB473921D32F06A3AC0F90F57EE2 /* DJLLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC9FAA0A12922EC1369844B314468B /* DJLLogCell.swift */; };
+		7E676B1577F28628DCA8A5B1BF333FC7 /* FileManager+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C3AC464422676B90602F05E29BF42 /* FileManager+extensions.swift */; };
+		8C5F371BF2F476794E07642F584B4801 /* DJLConsoleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5146A623C73591346D8E50C8171A3F8 /* DJLConsoleHandler.swift */; };
+		94357946FAA9B6FF701BB4CA78569235 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0942BE8DE46993911C3C4D2AE9F009 /* PaddingLabel.swift */; };
+		96B2A831C90331636EDEB680A240E2E6 /* Array+groupByDateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC76AD2B128E8CE9B7746F216A92D340 /* Array+groupByDateComponents.swift */; };
+		9A58C9653931EF61A2A26450FDA5F4D2 /* Pods-DJLogger_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF159E138B940C9E41FA17119027D911 /* Pods-DJLogger_Tests-dummy.m */; };
+		B0EE381C125F14D7CDBC749EA1864835 /* DJLLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A7D9FE74C4DDAE279F1BE9F14CF08 /* DJLLogView.swift */; };
+		B3BB64EDD76AB0392726D9AA42A5CD5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+		B50E703152A1212636230FBCD3B9985D /* DJLConsoleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5146A623C73591346D8E50C8171A3F8 /* DJLConsoleHandler.swift */; };
+		B615A986772D418D47BFD12499FE9BA2 /* DJLogger-watchOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B879DFC121A47BABDAD1E0BE51503717 /* DJLogger-watchOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B71ECF62BE912E868CE1D27BA6634AA2 /* DJLLogFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */; };
+		B8A64C59DE0D395373D6128DF4DE8AF3 /* FileManager+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83C3AC464422676B90602F05E29BF42 /* FileManager+extensions.swift */; };
+		B8F8798F73A859C99DC51AB9B1964C6F /* Pods-DJLogger_Watch_Example_App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F9C152E34B096ED9B88E815B322C6 /* Pods-DJLogger_Watch_Example_App-dummy.m */; };
+		C9EE7D0943078DB12A1123A421E1092E /* DJLLoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5430410FB9CAB60ADB0CCE0D6E71BE /* DJLLoggerConfiguration.swift */; };
+		D04CD7801A8C7B5232189A7F72371FFD /* DJLFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963103A82769DDCA0D090E3E418C1F6D /* DJLFileHandler.swift */; };
+		D1AD19AA2BB269739F451FF3945C6CDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		D20A03495D61AAD9717B1356FB14E4C5 /* DJLFileHandlerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E747475505FD193F72D2DEEB5769E /* DJLFileHandlerConfiguration.swift */; };
+		D23F5AF3ABA5266D9721D73FFF14FCE2 /* DJLogger-watchOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49F2B8B46DD643EE93B25FADF2D21F /* DJLogger-watchOS-dummy.m */; };
+		D3A145CA999A80620293E9BEAC17BF61 /* DJLFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905CFF47D3564652B8770217D98F1C3 /* DJLFileReader.swift */; };
+		D7C663880A604A30DB6C90FE50D03E31 /* DJLFileLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC49354155CDB40E43DD8B2051F0EA0 /* DJLFileLog.swift */; };
+		D940F0AC154F816FC680674D7B5AEC1A /* DJLLogger+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2C3FAAE4DA6E4CC07FF5601CBD50C /* DJLLogger+extensions.swift */; };
+		D9D1DDCE9E4814D0B197468118EDCD67 /* DJLLogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54314D1E71CD1AD85DC6EB81F1075D4 /* DJLLogFilterViewController.swift */; };
+		DACD741FA5BA90B3F60FBCB1C2A418C3 /* DJLLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC9FAA0A12922EC1369844B314468B /* DJLLogCell.swift */; };
+		EBB7C21171D8F739C27B68BEBF08A8D1 /* Pods-DJLogger_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C93198F3145447E30E9C7CBF354C7F7 /* Pods-DJLogger_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDDA3722F02E2AC86E0E9ED583A3F777 /* DJLLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1757BBC591BFF3CA1572E11725D3AD8 /* DJLLogViewController.swift */; };
+		F8C64CD348F2C32A4970F51D2A1A91C3 /* Pods-DJLogger_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6660E61ECFEB245F3AA8AC7A280A4693 /* Pods-DJLogger_Example-dummy.m */; };
+		FFFE857DB235165A6551DF9808F0B950 /* DJLPreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659E61FBF46DCB8DC6CEE0BC7EABEABC /* DJLPreviewHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0CDFFAC6C1092B475F761A5979501160 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D4665769DE9D2BC990B2538FFE1EA03;
-			remoteInfo = DJLogger;
-		};
-		0CEE5BEF9A7CD22EB293DC6D266DFE7F /* PBXContainerItemProxy */ = {
+		66560798EC6D8D299F6C1D34AFF0394C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F9A9F0F043848CCD984F969D8A924B36;
 			remoteInfo = "Pods-DJLogger_Example";
 		};
+		ACB8759ECF7DE3F1823056907001D0E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4756FF51940A412E3C1C67C62FB84639;
+			remoteInfo = "DJLogger-iOS";
+		};
+		EA5C8C902CAC19B22D811B33120E4A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00BCC10501040F4251041B796CC8C0F9;
+			remoteInfo = "DJLogger-watchOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		023B3DDD9493E6B4E1F74354A941BF94 /* Pods_DJLogger_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DJLogger_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07B61A582CBD769BD5DA96840C3CD343 /* Pods-DJLogger_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DJLogger_Tests-dummy.m"; sourceTree = "<group>"; };
-		0B59C8F9DE5D720FF6FAB95ABF108938 /* Pods-DJLogger_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Tests-umbrella.h"; sourceTree = "<group>"; };
-		11D9E2DD71B23B69BE821318BCD8588D /* Pods_DJLogger_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DJLogger_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14E54220369635038804406C8D15BAA3 /* Pods-DJLogger_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DJLogger_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2AB02F6F985867283EA0D8937672A5DF /* Pods-DJLogger_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DJLogger_Example-dummy.m"; sourceTree = "<group>"; };
-		2DD370CECBE3712976796ECE985EB2C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		35C62437A2EDA30BB60E8CD785FB892B /* Pods-DJLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3C256327262457F200BFADD3 /* DJLLogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogFilterViewController.swift; sourceTree = "<group>"; };
-		3C256328262457F200BFADD3 /* DJLLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogCell.swift; sourceTree = "<group>"; };
-		3C256329262457F200BFADD3 /* DJLLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogViewController.swift; sourceTree = "<group>"; };
-		3C25632C262457F200BFADD3 /* DJLFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLFileHandler.swift; sourceTree = "<group>"; };
-		3C25632D262457F200BFADD3 /* DJLConsoleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLConsoleHandler.swift; sourceTree = "<group>"; };
-		3C25632F262457F200BFADD3 /* DJLFileLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLFileLog.swift; sourceTree = "<group>"; };
-		3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLFolderMonitor.swift; sourceTree = "<group>"; };
-		3C256331262457F200BFADD3 /* DJLLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogger.swift; sourceTree = "<group>"; };
-		3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLPreviewHandler.swift; sourceTree = "<group>"; };
-		3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogFilterSettings.swift; sourceTree = "<group>"; };
-		3C305F092652AF1C00C0621B /* FileManager+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+extensions.swift"; sourceTree = "<group>"; };
-		3C7FF6B326270B8C009CAC1D /* DJLLogHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogHandlerProtocol.swift; sourceTree = "<group>"; };
-		3C7FF6BB26270DC5009CAC1D /* DJLFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLFileReader.swift; sourceTree = "<group>"; };
-		3C7FF6C026270DE3009CAC1D /* DJLFileHandlerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLFileHandlerConfiguration.swift; sourceTree = "<group>"; };
-		3C7FF6CF26271CD7009CAC1D /* DJLLoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLoggerConfiguration.swift; sourceTree = "<group>"; };
-		3C7FF6D826272089009CAC1D /* DJLLogger+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJLLogger+extensions.swift"; sourceTree = "<group>"; };
-		3C7FF6E7262731D2009CAC1D /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		3C7FF6EF26273A19009CAC1D /* Array+groupByDateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+groupByDateComponents.swift"; sourceTree = "<group>"; };
-		3C7FF6F426273AC9009CAC1D /* DJLFileLog+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DJLFileLog+extension.swift"; sourceTree = "<group>"; };
-		3D35C3DCF06373A18F74A853468B81A9 /* Pods-DJLogger_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Example-umbrella.h"; sourceTree = "<group>"; };
-		3FDC62A3F3F93BA9CD95B6FA746FBD78 /* DJLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DJLogger.release.xcconfig; sourceTree = "<group>"; };
-		49A291F6F74CF2A6E93683C13B40389A /* DJLogger-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DJLogger-Info.plist"; sourceTree = "<group>"; };
-		49C5649B1D236A560A0A76337935AFEF /* DJLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DJLogger-umbrella.h"; sourceTree = "<group>"; };
-		529AEF52E50E82EC744FB0251499C8D0 /* Pods-DJLogger_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5E3CD9CDD35DB4722ECD2CE44899108B /* Pods-DJLogger_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DJLogger_Example-frameworks.sh"; sourceTree = "<group>"; };
-		6C89552581117784B1D859B8C1270F25 /* Pods-DJLogger_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Example-Info.plist"; sourceTree = "<group>"; };
-		71F6625C1704CB31044E6071AA3CE5BA /* DJLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DJLogger.debug.xcconfig; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7D1F8DC4F4045A4C4E9A37C1000CFAFD /* Pods-DJLogger_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		830C0607089C028237BB38C62C119CDA /* Pods-DJLogger_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		904149984A4539F314153B24FC188BCF /* Pods-DJLogger_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DJLogger_Tests.modulemap"; sourceTree = "<group>"; };
-		9A4F54AFE7E5A7601FBAFF2386112BAA /* DJLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DJLogger-dummy.m"; sourceTree = "<group>"; };
-		9B6AFBCA9AA980A681BFED89AEC977CF /* Pods-DJLogger_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DJLogger_Example.modulemap"; sourceTree = "<group>"; };
+		023B3DDD9493E6B4E1F74354A941BF94 /* Pods-DJLogger_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DJLogger_Example"; path = Pods_DJLogger_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D9E2DD71B23B69BE821318BCD8588D /* Pods-DJLogger_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DJLogger_Tests"; path = Pods_DJLogger_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		144DAA63D534EB7A21CB5EACADFC4646 /* DJLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DJLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		16E537E058356D38D20A32334650B53B /* Pods-DJLogger_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1C93587461ECB3915433F0B3D5581609 /* DJLogger-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DJLogger-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		1F7491CC6917F6D6BC4EDEEE773A3EBB /* DJLogger-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DJLogger-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2030F2D7DE86150763AC109D8815A370 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2569AB14B8044E3463B32EDCDC5E4D35 /* DJLFileLog+extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DJLFileLog+extension.swift"; sourceTree = "<group>"; };
+		260909C0435FBCB673CCFFBCCF972A4D /* DJLogger-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "DJLogger-iOS.modulemap"; sourceTree = "<group>"; };
+		2729A416D2AE3E301E1B7BD12C817B7E /* DJLogger-watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DJLogger-watchOS.release.xcconfig"; path = "../DJLogger-watchOS/DJLogger-watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		35AD8C11378FC6EDF318990DFE2CE208 /* Pods-DJLogger_Watch_Example_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Watch_Example_App.release.xcconfig"; sourceTree = "<group>"; };
+		38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogHandlerProtocol.swift; sourceTree = "<group>"; };
+		4EDEB0AFB8DBD1F783DD6603E008200A /* Pods-DJLogger_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		52770E19337C3239BBEB4520AFCBF350 /* DJLogger-watchOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "DJLogger-watchOS-Info.plist"; path = "../DJLogger-watchOS/DJLogger-watchOS-Info.plist"; sourceTree = "<group>"; };
+		5601DD7FD545974E56D4224639F94B44 /* Pods-DJLogger_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Example-umbrella.h"; sourceTree = "<group>"; };
+		5905CFF47D3564652B8770217D98F1C3 /* DJLFileReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLFileReader.swift; sourceTree = "<group>"; };
+		5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E3D00DAE6C75BB0A0C7F07D54C7EAB8 /* Pods-DJLogger_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Tests-Info.plist"; sourceTree = "<group>"; };
+		6334BB527D2D8EBC8DA3E48F252C6FB0 /* Pods-DJLogger_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DJLogger_Tests.modulemap"; sourceTree = "<group>"; };
+		659E61FBF46DCB8DC6CEE0BC7EABEABC /* DJLPreviewHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DJLPreviewHandler.swift; path = DJLogger/Classes/Logger/DJLPreviewHandler.swift; sourceTree = "<group>"; };
+		6660E61ECFEB245F3AA8AC7A280A4693 /* Pods-DJLogger_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DJLogger_Example-dummy.m"; sourceTree = "<group>"; };
+		6987FCCA1930037EE0BB673E115ACDBC /* DJLogger-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DJLogger-iOS-Info.plist"; sourceTree = "<group>"; };
+		6B6C70473288E99C97955B977F6F378E /* Pods-DJLogger_Watch_Example_App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DJLogger_Watch_Example_App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6E8A94ADBD3468BE0DDC9AD2987957A1 /* Pods-DJLogger_Watch_Example_App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Watch_Example_App-acknowledgements.plist"; sourceTree = "<group>"; };
+		71551E32110AF51BC7E0413FDD1D4F99 /* Pods-DJLogger_Watch_Example_App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Watch_Example_App-umbrella.h"; sourceTree = "<group>"; };
+		76B6C037280CA6911163F25AE8BA25DA /* Pods-DJLogger_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7B2F9C152E34B096ED9B88E815B322C6 /* Pods-DJLogger_Watch_Example_App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DJLogger_Watch_Example_App-dummy.m"; sourceTree = "<group>"; };
+		7B7BCC06DEF30D4ACE424F7603FDED46 /* DJLogger-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DJLogger-iOS-umbrella.h"; sourceTree = "<group>"; };
+		7C64E945426C206879A8272666BFCFDF /* Pods-DJLogger_Watch_Example_App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DJLogger_Watch_Example_App.modulemap"; sourceTree = "<group>"; };
+		7C93198F3145447E30E9C7CBF354C7F7 /* Pods-DJLogger_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Tests-umbrella.h"; sourceTree = "<group>"; };
+		7E152DCF19BA23381DEA12DA3CECEAA1 /* Pods-DJLogger_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		865B9DF85D0A1D25DAF33D722BA7D166 /* Pods-DJLogger_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Example-Info.plist"; sourceTree = "<group>"; };
+		8F5430410FB9CAB60ADB0CCE0D6E71BE /* DJLLoggerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DJLLoggerConfiguration.swift; path = DJLogger/Classes/Logger/DJLLoggerConfiguration.swift; sourceTree = "<group>"; };
+		935A7D9FE74C4DDAE279F1BE9F14CF08 /* DJLLogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogView.swift; sourceTree = "<group>"; };
+		945E7F1A20021CC2F8855A2F7CA3F7F3 /* Pods-DJLogger_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DJLogger_Example-frameworks.sh"; sourceTree = "<group>"; };
+		963103A82769DDCA0D090E3E418C1F6D /* DJLFileHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLFileHandler.swift; sourceTree = "<group>"; };
+		9C0942BE8DE46993911C3C4D2AE9F009 /* PaddingLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AD556C828DC4506F7BE7A2855D5B277A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B05539ED4AC5CDBFBDDA67D566D5DED7 /* DJLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DJLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B6359CA8E7879B42C5A5895D6C1D5AC9 /* Pods-DJLogger_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DJLogger_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C62A8F75CE8D19B3B00ABE8D977ABC26 /* Pods-DJLogger_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Tests-Info.plist"; sourceTree = "<group>"; };
-		CD46E65D253A66AD3A4B38AA03EAD2C0 /* Pods-DJLogger_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D2A9F586555FBD63C4BFE6EFE1A71EA4 /* DJLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DJLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7532A77F2D1C61A66E310459F08EAEE /* Pods-DJLogger_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		EC3FAABC970350F35D12DD7BB81BC66A /* DJLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DJLogger-prefix.pch"; sourceTree = "<group>"; };
-		FA159C7D459435132A224874416221DB /* DJLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DJLogger.modulemap; sourceTree = "<group>"; };
+		A1757BBC591BFF3CA1572E11725D3AD8 /* DJLLogViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogViewController.swift; sourceTree = "<group>"; };
+		A21EB77FDD3EBD846309B573DB6E5F6C /* Pods-DJLogger_Watch_Example_App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Watch_Example_App-Info.plist"; sourceTree = "<group>"; };
+		A54314D1E71CD1AD85DC6EB81F1075D4 /* DJLLogFilterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogFilterViewController.swift; sourceTree = "<group>"; };
+		A962EEAF358BE26437BF5A9A1E4E8B55 /* DJLLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DJLLogger.swift; path = DJLogger/Classes/Logger/DJLLogger.swift; sourceTree = "<group>"; };
+		B0FC9FAA0A12922EC1369844B314468B /* DJLLogCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogCell.swift; sourceTree = "<group>"; };
+		B23E747475505FD193F72D2DEEB5769E /* DJLFileHandlerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLFileHandlerConfiguration.swift; sourceTree = "<group>"; };
+		B423155A3167226DFE75332F999B0898 /* DJLogger-watchOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DJLogger-watchOS-prefix.pch"; path = "../DJLogger-watchOS/DJLogger-watchOS-prefix.pch"; sourceTree = "<group>"; };
+		B879DFC121A47BABDAD1E0BE51503717 /* DJLogger-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DJLogger-watchOS-umbrella.h"; path = "../DJLogger-watchOS/DJLogger-watchOS-umbrella.h"; sourceTree = "<group>"; };
+		C3AB9D7D16A4EE16170364D90D268CB6 /* Pods-DJLogger_Watch_Example_App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DJLogger_Watch_Example_App-frameworks.sh"; sourceTree = "<group>"; };
+		C60396B4649C87FC6213B605C9A32220 /* DJLFolderMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DJLFolderMonitor.swift; path = DJLogger/Classes/Logger/DJLFolderMonitor.swift; sourceTree = "<group>"; };
+		CBD4236DBF7634AF8534A3DB5708A8AB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CDC49354155CDB40E43DD8B2051F0EA0 /* DJLFileLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLFileLog.swift; sourceTree = "<group>"; };
+		CE49F2B8B46DD643EE93B25FADF2D21F /* DJLogger-watchOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DJLogger-watchOS-dummy.m"; path = "../DJLogger-watchOS/DJLogger-watchOS-dummy.m"; sourceTree = "<group>"; };
+		D036035D282AD551ACDC5CDF31DE8E43 /* Pods-DJLogger_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DJLogger_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D24C82EFF74A783071447FA34ED5080D /* DJLogger-watchOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "DJLogger-watchOS.modulemap"; path = "../DJLogger-watchOS/DJLogger-watchOS.modulemap"; sourceTree = "<group>"; };
+		D4FA5C84BF774DA63A446D9E606203E7 /* DJLogger-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DJLogger-iOS-dummy.m"; sourceTree = "<group>"; };
+		D5146A623C73591346D8E50C8171A3F8 /* DJLConsoleHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLConsoleHandler.swift; sourceTree = "<group>"; };
+		D5A09B58087ECE561F19CFF496C72A3B /* DJLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DJLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B31ACFFFC2A6097E8C4C2E17475307 /* DJLogger-watchOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "DJLogger-watchOS"; path = DJLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E0CA5B82A49A3091C7D48609CD90C9 /* Pods-DJLogger_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DJLogger_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC76AD2B128E8CE9B7746F216A92D340 /* Array+groupByDateComponents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+groupByDateComponents.swift"; sourceTree = "<group>"; };
+		DDD2FB396639CBDEEC2C35566EB76A40 /* DJLogger-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DJLogger-watchOS.debug.xcconfig"; path = "../DJLogger-watchOS/DJLogger-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DF159E138B940C9E41FA17119027D911 /* Pods-DJLogger_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DJLogger_Tests-dummy.m"; sourceTree = "<group>"; };
+		E1A8601C43FC7F47D5D8EF96CC28104B /* Pods-DJLogger_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogFilterSettings.swift; sourceTree = "<group>"; };
+		E54A5E9D95972718F371C6FBF207EF34 /* Pods-DJLogger_Watch_Example_App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DJLogger_Watch_Example_App"; path = Pods_DJLogger_Watch_Example_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E83C3AC464422676B90602F05E29BF42 /* FileManager+extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FileManager+extensions.swift"; sourceTree = "<group>"; };
+		EAA2C3FAAE4DA6E4CC07FF5601CBD50C /* DJLLogger+extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DJLLogger+extensions.swift"; sourceTree = "<group>"; };
+		EE77BBB7CDE0926EC8D957C1BB239E8F /* DJLogger-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DJLogger-iOS-prefix.pch"; sourceTree = "<group>"; };
+		F4360DE915BA0BF1A449B73910E77352 /* Pods-DJLogger_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DJLogger_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F7CF43853AF0E73232F3D9CCCCE3D623 /* Pods-DJLogger_Watch_Example_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Watch_Example_App.debug.xcconfig"; sourceTree = "<group>"; };
+		F84E42B117B4054FA342E25A3B857990 /* Pods-DJLogger_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DJLogger_Example.modulemap"; sourceTree = "<group>"; };
+		FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E761BC27AA0180CDBA83A6057D13CBB /* Frameworks */ = {
+		44900D6552F497ACFC810CC6FE0A40FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A225BA23BAC6B7AB0A6555A5B043B14F /* Foundation.framework in Frameworks */,
+				B3BB64EDD76AB0392726D9AA42A5CD5E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62C5B33AF9AABDFE0311BE6FAD83C063 /* Frameworks */ = {
+		937F4F2412475BD5303999D9E244DA51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD7C7D96077FF6BAA0CBB03227CDC3D /* Foundation.framework in Frameworks */,
+				56ADC6365FC440D9961B68CBAE193456 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		902B04096D84CA279FDE6472FDF3DBAD /* Frameworks */ = {
+		B26CAF7693FF418ED62597E912350E26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				071B172D0C8870C2F0E1EFD6E8A86D6F /* Foundation.framework in Frameworks */,
+				D1AD19AA2BB269739F451FF3945C6CDD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F5521992C9009D91BAA1358D9C5DAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				236BF9DBAF97F1DE322D2201D307F4A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDB3CDC97001322F2D80DD1B08D877A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE8436C72C4155AF89E5D40F69A007E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		222B46405CD3DACEEA1425A4A1900329 /* Targets Support Files */ = {
+		03FBABE5ACCBF0D21AB61D364299D310 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8AC3D54FE85A648B5DE72F5989D5F095 /* Pods-DJLogger_Example */,
-				95A28A223BBBC65A5929B20D41B388E8 /* Pods-DJLogger_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		2A14B69B01980A491049CDCF57866AB9 /* DJLogger */ = {
-			isa = PBXGroup;
-			children = (
-				3C25632A262457F200BFADD3 /* Logger */,
-				8284214448C25EBEAF9E62B6B06480CC /* Pod */,
-				53807D22B8B0F1832CBD4995C28C60C4 /* Support Files */,
-			);
-			name = DJLogger;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		3C256326262457F200BFADD3 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				3C7FF6F926273AE6009CAC1D /* Models */,
-				3C7FF6E6262731C2009CAC1D /* Views */,
-				3C256329262457F200BFADD3 /* DJLLogViewController.swift */,
-				3C256327262457F200BFADD3 /* DJLLogFilterViewController.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		3C25632A262457F200BFADD3 /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				3C7FF6D72627207C009CAC1D /* Extensions */,
-				3C256326262457F200BFADD3 /* UI */,
-				3C25632B262457F200BFADD3 /* Handlers */,
-				3C256330262457F200BFADD3 /* DJLFolderMonitor.swift */,
-				3C305F0326529AEE00C0621B /* DJLPreviewHandler.swift */,
-				3C7FF6CF26271CD7009CAC1D /* DJLLoggerConfiguration.swift */,
-				3C256331262457F200BFADD3 /* DJLLogger.swift */,
-			);
-			name = Logger;
-			path = DJLogger/Classes/Logger;
-			sourceTree = "<group>";
-		};
-		3C25632B262457F200BFADD3 /* Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				3C7FF6B326270B8C009CAC1D /* DJLLogHandlerProtocol.swift */,
-				3C7FF6AA26270958009CAC1D /* ConsoleHandler */,
-				3C7FF6A926270950009CAC1D /* FileHandler */,
-			);
-			path = Handlers;
-			sourceTree = "<group>";
-		};
-		3C7FF6A926270950009CAC1D /* FileHandler */ = {
-			isa = PBXGroup;
-			children = (
-				3C7FF6C526270EA3009CAC1D /* Models */,
-				3C7FF6C026270DE3009CAC1D /* DJLFileHandlerConfiguration.swift */,
-				3C25632C262457F200BFADD3 /* DJLFileHandler.swift */,
-				3C7FF6BB26270DC5009CAC1D /* DJLFileReader.swift */,
-			);
-			path = FileHandler;
-			sourceTree = "<group>";
-		};
-		3C7FF6AA26270958009CAC1D /* ConsoleHandler */ = {
-			isa = PBXGroup;
-			children = (
-				3C25632D262457F200BFADD3 /* DJLConsoleHandler.swift */,
-			);
-			path = ConsoleHandler;
-			sourceTree = "<group>";
-		};
-		3C7FF6C526270EA3009CAC1D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3C25632F262457F200BFADD3 /* DJLFileLog.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3C7FF6D72627207C009CAC1D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3C7FF6EF26273A19009CAC1D /* Array+groupByDateComponents.swift */,
-				3C7FF6F426273AC9009CAC1D /* DJLFileLog+extension.swift */,
-				3C7FF6D826272089009CAC1D /* DJLLogger+extensions.swift */,
-				3C305F092652AF1C00C0621B /* FileManager+extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		3C7FF6E6262731C2009CAC1D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3C256328262457F200BFADD3 /* DJLLogCell.swift */,
-				3C7FF6E7262731D2009CAC1D /* PaddingLabel.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3C7FF6F926273AE6009CAC1D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3C305F072652A62800C0621B /* DJLLogFilterSettings.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		53807D22B8B0F1832CBD4995C28C60C4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA159C7D459435132A224874416221DB /* DJLogger.modulemap */,
-				9A4F54AFE7E5A7601FBAFF2386112BAA /* DJLogger-dummy.m */,
-				49A291F6F74CF2A6E93683C13B40389A /* DJLogger-Info.plist */,
-				EC3FAABC970350F35D12DD7BB81BC66A /* DJLogger-prefix.pch */,
-				49C5649B1D236A560A0A76337935AFEF /* DJLogger-umbrella.h */,
-				71F6625C1704CB31044E6071AA3CE5BA /* DJLogger.debug.xcconfig */,
-				3FDC62A3F3F93BA9CD95B6FA746FBD78 /* DJLogger.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DJLogger";
-			sourceTree = "<group>";
-		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8284214448C25EBEAF9E62B6B06480CC /* Pod */ = {
+		05A629E719E25E0067F6ADBC55337F33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B05539ED4AC5CDBFBDDA67D566D5DED7 /* DJLogger.podspec */,
-				2DD370CECBE3712976796ECE985EB2C2 /* LICENSE */,
-				AD556C828DC4506F7BE7A2855D5B277A /* README.md */,
+				E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */,
 			);
-			name = Pod;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		84FB1A0BB327A5C21B9362ABC73D869B /* Development Pods */ = {
+		0F190C3409553767391CB292C7030415 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				2A14B69B01980A491049CDCF57866AB9 /* DJLogger */,
+				38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */,
+				5410658AE174CC1DF0CEBB6C799DA838 /* ConsoleHandler */,
+				8EE15D57CC5D8CAE5461AC395786C684 /* FileHandler */,
 			);
-			name = "Development Pods";
+			name = Handlers;
+			path = DJLogger/Classes/Logger/Handlers;
 			sourceTree = "<group>";
 		};
-		8AC3D54FE85A648B5DE72F5989D5F095 /* Pods-DJLogger_Example */ = {
+		2A53C8F2A7D0A40822DC6AAE56D23D26 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9B6AFBCA9AA980A681BFED89AEC977CF /* Pods-DJLogger_Example.modulemap */,
-				B6359CA8E7879B42C5A5895D6C1D5AC9 /* Pods-DJLogger_Example-acknowledgements.markdown */,
-				E7532A77F2D1C61A66E310459F08EAEE /* Pods-DJLogger_Example-acknowledgements.plist */,
-				2AB02F6F985867283EA0D8937672A5DF /* Pods-DJLogger_Example-dummy.m */,
-				5E3CD9CDD35DB4722ECD2CE44899108B /* Pods-DJLogger_Example-frameworks.sh */,
-				6C89552581117784B1D859B8C1270F25 /* Pods-DJLogger_Example-Info.plist */,
-				3D35C3DCF06373A18F74A853468B81A9 /* Pods-DJLogger_Example-umbrella.h */,
-				830C0607089C028237BB38C62C119CDA /* Pods-DJLogger_Example.debug.xcconfig */,
-				CD46E65D253A66AD3A4B38AA03EAD2C0 /* Pods-DJLogger_Example.release.xcconfig */,
+				3C4C21D9293DF4FE0054605F /* iOS */,
+				F89C27DFA4688E7956781BEE15DBC0AA /* Watch */,
+			);
+			name = UI;
+			path = DJLogger/Classes/Logger/UI;
+			sourceTree = "<group>";
+		};
+		3634FE23DFE99B16AA1B341789B9AF62 /* Pods-DJLogger_Watch_Example_App */ = {
+			isa = PBXGroup;
+			children = (
+				7C64E945426C206879A8272666BFCFDF /* Pods-DJLogger_Watch_Example_App.modulemap */,
+				6B6C70473288E99C97955B977F6F378E /* Pods-DJLogger_Watch_Example_App-acknowledgements.markdown */,
+				6E8A94ADBD3468BE0DDC9AD2987957A1 /* Pods-DJLogger_Watch_Example_App-acknowledgements.plist */,
+				7B2F9C152E34B096ED9B88E815B322C6 /* Pods-DJLogger_Watch_Example_App-dummy.m */,
+				C3AB9D7D16A4EE16170364D90D268CB6 /* Pods-DJLogger_Watch_Example_App-frameworks.sh */,
+				A21EB77FDD3EBD846309B573DB6E5F6C /* Pods-DJLogger_Watch_Example_App-Info.plist */,
+				71551E32110AF51BC7E0413FDD1D4F99 /* Pods-DJLogger_Watch_Example_App-umbrella.h */,
+				F7CF43853AF0E73232F3D9CCCCE3D623 /* Pods-DJLogger_Watch_Example_App.debug.xcconfig */,
+				35AD8C11378FC6EDF318990DFE2CE208 /* Pods-DJLogger_Watch_Example_App.release.xcconfig */,
+			);
+			name = "Pods-DJLogger_Watch_Example_App";
+			path = "Target Support Files/Pods-DJLogger_Watch_Example_App";
+			sourceTree = "<group>";
+		};
+		3C4C21D9293DF4FE0054605F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A54314D1E71CD1AD85DC6EB81F1075D4 /* DJLLogFilterViewController.swift */,
+				A1757BBC591BFF3CA1572E11725D3AD8 /* DJLLogViewController.swift */,
+				05A629E719E25E0067F6ADBC55337F33 /* Models */,
+				418DD600153475A4D23C9F165D3FCDD6 /* Views */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		418DD600153475A4D23C9F165D3FCDD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0FC9FAA0A12922EC1369844B314468B /* DJLLogCell.swift */,
+				9C0942BE8DE46993911C3C4D2AE9F009 /* PaddingLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5410658AE174CC1DF0CEBB6C799DA838 /* ConsoleHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D5146A623C73591346D8E50C8171A3F8 /* DJLConsoleHandler.swift */,
+			);
+			path = ConsoleHandler;
+			sourceTree = "<group>";
+		};
+		54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03FBABE5ACCBF0D21AB61D364299D310 /* iOS */,
+				8B063FB5829CC11F1F48DAAF9305FCB4 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A4B10492FE4873DB5BD21D813B2DB03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC76AD2B128E8CE9B7746F216A92D340 /* Array+groupByDateComponents.swift */,
+				2569AB14B8044E3463B32EDCDC5E4D35 /* DJLFileLog+extension.swift */,
+				EAA2C3FAAE4DA6E4CC07FF5601CBD50C /* DJLLogger+extensions.swift */,
+				E83C3AC464422676B90602F05E29BF42 /* FileManager+extensions.swift */,
+			);
+			name = Extensions;
+			path = DJLogger/Classes/Logger/Extensions;
+			sourceTree = "<group>";
+		};
+		8200F0A71E62CEBFAB3F72147EED62DD /* Pods-DJLogger_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F84E42B117B4054FA342E25A3B857990 /* Pods-DJLogger_Example.modulemap */,
+				D036035D282AD551ACDC5CDF31DE8E43 /* Pods-DJLogger_Example-acknowledgements.markdown */,
+				D5E0CA5B82A49A3091C7D48609CD90C9 /* Pods-DJLogger_Example-acknowledgements.plist */,
+				6660E61ECFEB245F3AA8AC7A280A4693 /* Pods-DJLogger_Example-dummy.m */,
+				945E7F1A20021CC2F8855A2F7CA3F7F3 /* Pods-DJLogger_Example-frameworks.sh */,
+				865B9DF85D0A1D25DAF33D722BA7D166 /* Pods-DJLogger_Example-Info.plist */,
+				5601DD7FD545974E56D4224639F94B44 /* Pods-DJLogger_Example-umbrella.h */,
+				4EDEB0AFB8DBD1F783DD6603E008200A /* Pods-DJLogger_Example.debug.xcconfig */,
+				76B6C037280CA6911163F25AE8BA25DA /* Pods-DJLogger_Example.release.xcconfig */,
 			);
 			name = "Pods-DJLogger_Example";
 			path = "Target Support Files/Pods-DJLogger_Example";
 			sourceTree = "<group>";
 		};
-		8D991BA024C3D5D235732498165D4E2E /* Products */ = {
+		83129E2BA6ADE92E3651917C91BC8F92 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D2A9F586555FBD63C4BFE6EFE1A71EA4 /* DJLogger.framework */,
-				023B3DDD9493E6B4E1F74354A941BF94 /* Pods_DJLogger_Example.framework */,
-				11D9E2DD71B23B69BE821318BCD8588D /* Pods_DJLogger_Tests.framework */,
+				260909C0435FBCB673CCFFBCCF972A4D /* DJLogger-iOS.modulemap */,
+				D4FA5C84BF774DA63A446D9E606203E7 /* DJLogger-iOS-dummy.m */,
+				6987FCCA1930037EE0BB673E115ACDBC /* DJLogger-iOS-Info.plist */,
+				EE77BBB7CDE0926EC8D957C1BB239E8F /* DJLogger-iOS-prefix.pch */,
+				7B7BCC06DEF30D4ACE424F7603FDED46 /* DJLogger-iOS-umbrella.h */,
+				1C93587461ECB3915433F0B3D5581609 /* DJLogger-iOS.debug.xcconfig */,
+				1F7491CC6917F6D6BC4EDEEE773A3EBB /* DJLogger-iOS.release.xcconfig */,
+				D24C82EFF74A783071447FA34ED5080D /* DJLogger-watchOS.modulemap */,
+				CE49F2B8B46DD643EE93B25FADF2D21F /* DJLogger-watchOS-dummy.m */,
+				52770E19337C3239BBEB4520AFCBF350 /* DJLogger-watchOS-Info.plist */,
+				B423155A3167226DFE75332F999B0898 /* DJLogger-watchOS-prefix.pch */,
+				B879DFC121A47BABDAD1E0BE51503717 /* DJLogger-watchOS-umbrella.h */,
+				DDD2FB396639CBDEEC2C35566EB76A40 /* DJLogger-watchOS.debug.xcconfig */,
+				2729A416D2AE3E301E1B7BD12C817B7E /* DJLogger-watchOS.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DJLogger-iOS";
 			sourceTree = "<group>";
 		};
-		95A28A223BBBC65A5929B20D41B388E8 /* Pods-DJLogger_Tests */ = {
+		864F7C09B6DE294CF9AB44349E60184B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				904149984A4539F314153B24FC188BCF /* Pods-DJLogger_Tests.modulemap */,
-				14E54220369635038804406C8D15BAA3 /* Pods-DJLogger_Tests-acknowledgements.markdown */,
-				529AEF52E50E82EC744FB0251499C8D0 /* Pods-DJLogger_Tests-acknowledgements.plist */,
-				07B61A582CBD769BD5DA96840C3CD343 /* Pods-DJLogger_Tests-dummy.m */,
-				C62A8F75CE8D19B3B00ABE8D977ABC26 /* Pods-DJLogger_Tests-Info.plist */,
-				0B59C8F9DE5D720FF6FAB95ABF108938 /* Pods-DJLogger_Tests-umbrella.h */,
-				35C62437A2EDA30BB60E8CD785FB892B /* Pods-DJLogger_Tests.debug.xcconfig */,
-				7D1F8DC4F4045A4C4E9A37C1000CFAFD /* Pods-DJLogger_Tests.release.xcconfig */,
+				CBED05C132CDA6CEF20893BFD2DE00A6 /* DJLogger */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		8B063FB5829CC11F1F48DAAF9305FCB4 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		8EE15D57CC5D8CAE5461AC395786C684 /* FileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				963103A82769DDCA0D090E3E418C1F6D /* DJLFileHandler.swift */,
+				B23E747475505FD193F72D2DEEB5769E /* DJLFileHandlerConfiguration.swift */,
+				5905CFF47D3564652B8770217D98F1C3 /* DJLFileReader.swift */,
+				997F359290A68BF371774984F0CE52E6 /* Models */,
+			);
+			path = FileHandler;
+			sourceTree = "<group>";
+		};
+		997F359290A68BF371774984F0CE52E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDC49354155CDB40E43DD8B2051F0EA0 /* DJLFileLog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6EAE7E90A58A0A1330C87EC47F705E1 /* Pods-DJLogger_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6334BB527D2D8EBC8DA3E48F252C6FB0 /* Pods-DJLogger_Tests.modulemap */,
+				F4360DE915BA0BF1A449B73910E77352 /* Pods-DJLogger_Tests-acknowledgements.markdown */,
+				16E537E058356D38D20A32334650B53B /* Pods-DJLogger_Tests-acknowledgements.plist */,
+				DF159E138B940C9E41FA17119027D911 /* Pods-DJLogger_Tests-dummy.m */,
+				5E3D00DAE6C75BB0A0C7F07D54C7EAB8 /* Pods-DJLogger_Tests-Info.plist */,
+				7C93198F3145447E30E9C7CBF354C7F7 /* Pods-DJLogger_Tests-umbrella.h */,
+				E1A8601C43FC7F47D5D8EF96CC28104B /* Pods-DJLogger_Tests.debug.xcconfig */,
+				7E152DCF19BA23381DEA12DA3CECEAA1 /* Pods-DJLogger_Tests.release.xcconfig */,
 			);
 			name = "Pods-DJLogger_Tests";
 			path = "Target Support Files/Pods-DJLogger_Tests";
+			sourceTree = "<group>";
+		};
+		CA16F911C888A816257C8064EFEADF7F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8200F0A71E62CEBFAB3F72147EED62DD /* Pods-DJLogger_Example */,
+				A6EAE7E90A58A0A1330C87EC47F705E1 /* Pods-DJLogger_Tests */,
+				3634FE23DFE99B16AA1B341789B9AF62 /* Pods-DJLogger_Watch_Example_App */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CBED05C132CDA6CEF20893BFD2DE00A6 /* DJLogger */ = {
+			isa = PBXGroup;
+			children = (
+				C60396B4649C87FC6213B605C9A32220 /* DJLFolderMonitor.swift */,
+				A962EEAF358BE26437BF5A9A1E4E8B55 /* DJLLogger.swift */,
+				8F5430410FB9CAB60ADB0CCE0D6E71BE /* DJLLoggerConfiguration.swift */,
+				659E61FBF46DCB8DC6CEE0BC7EABEABC /* DJLPreviewHandler.swift */,
+				7A4B10492FE4873DB5BD21D813B2DB03 /* Extensions */,
+				0F190C3409553767391CB292C7030415 /* Handlers */,
+				CD2B43E91526F2D36EEC8E57DEE7BC0D /* Pod */,
+				83129E2BA6ADE92E3651917C91BC8F92 /* Support Files */,
+				2A53C8F2A7D0A40822DC6AAE56D23D26 /* UI */,
+			);
+			name = DJLogger;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CD2B43E91526F2D36EEC8E57DEE7BC0D /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				144DAA63D534EB7A21CB5EACADFC4646 /* DJLogger.podspec */,
+				2030F2D7DE86150763AC109D8815A370 /* LICENSE */,
+				CBD4236DBF7634AF8534A3DB5708A8AB /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				84FB1A0BB327A5C21B9362ABC73D869B /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				8D991BA024C3D5D235732498165D4E2E /* Products */,
-				222B46405CD3DACEEA1425A4A1900329 /* Targets Support Files */,
+				864F7C09B6DE294CF9AB44349E60184B /* Development Pods */,
+				54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */,
+				E3E04B338520B61EEF9601B5F5AFADD3 /* Products */,
+				CA16F911C888A816257C8064EFEADF7F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		E3E04B338520B61EEF9601B5F5AFADD3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				D5A09B58087ECE561F19CFF496C72A3B /* DJLogger.framework */,
+				D5B31ACFFFC2A6097E8C4C2E17475307 /* DJLogger-watchOS */,
+				023B3DDD9493E6B4E1F74354A941BF94 /* Pods-DJLogger_Example */,
+				11D9E2DD71B23B69BE821318BCD8588D /* Pods-DJLogger_Tests */,
+				E54A5E9D95972718F371C6FBF207EF34 /* Pods-DJLogger_Watch_Example_App */,
 			);
-			name = Frameworks;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F89C27DFA4688E7956781BEE15DBC0AA /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				935A7D9FE74C4DDAE279F1BE9F14CF08 /* DJLLogView.swift */,
+			);
+			path = Watch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		57658BF09CF4F7F56EAC1EF84D960452 /* Headers */ = {
+		647C810378E216810F3421B2B23EC563 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B5C663E10F164FA060A42CD310B19A2 /* Pods-DJLogger_Example-umbrella.h in Headers */,
+				43AF93399AE64D5C216299017BE2FC38 /* Pods-DJLogger_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		887785296EBE47FCAEEA618964ABEF11 /* Headers */ = {
+		79634CC32584D7234DE19F1D9D2B8142 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0CD15EAFF7842BB6AE01107F1D1EC96 /* DJLogger-umbrella.h in Headers */,
+				0B0C146590F455641F4F0395479F7396 /* Pods-DJLogger_Watch_Example_App-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C9023014B97BB6CFFD37A974E94CFC7 /* Headers */ = {
+		A8F8464FB65DC2651C7FE363F77BC08E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D200829629BE320DAE0A46F5F82173EA /* Pods-DJLogger_Tests-umbrella.h in Headers */,
+				EBB7C21171D8F739C27B68BEBF08A8D1 /* Pods-DJLogger_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D895F10AC2D281E48234CE725E2985CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A72D31C15F2605B863DCF0E88874C8D /* DJLogger-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9E322388DD6F980EFB4B579E7CAB0D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B615A986772D418D47BFD12499FE9BA2 /* DJLogger-watchOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7F4B48B375C45E75E5B8296BBF35A9BB /* Pods-DJLogger_Tests */ = {
+		00BCC10501040F4251041B796CC8C0F9 /* DJLogger-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D277B18D324BA3701784E37F53552B3 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Tests" */;
+			buildConfigurationList = C7015CFD7EB875EC9226A5709600C925 /* Build configuration list for PBXNativeTarget "DJLogger-watchOS" */;
 			buildPhases = (
-				9C9023014B97BB6CFFD37A974E94CFC7 /* Headers */,
-				1EAE1AEBC762637689DE7E672169DC61 /* Sources */,
-				5E761BC27AA0180CDBA83A6057D13CBB /* Frameworks */,
-				92DA4A7286AE2FC006192694B995CE41 /* Resources */,
+				E9E322388DD6F980EFB4B579E7CAB0D4 /* Headers */,
+				65BCE3F5B9D936FFBC094D5AC6BAEC64 /* Sources */,
+				BDB3CDC97001322F2D80DD1B08D877A3 /* Frameworks */,
+				CA40DF6DF994109C9A4325B2BCF88006 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				688D3BD8BF5DFD20B513F3B8803DC84E /* PBXTargetDependency */,
 			);
-			name = "Pods-DJLogger_Tests";
-			productName = "Pods-DJLogger_Tests";
-			productReference = 11D9E2DD71B23B69BE821318BCD8588D /* Pods_DJLogger_Tests.framework */;
+			name = "DJLogger-watchOS";
+			productName = DJLogger;
+			productReference = D5B31ACFFFC2A6097E8C4C2E17475307 /* DJLogger-watchOS */;
 			productType = "com.apple.product-type.framework";
 		};
-		8D4665769DE9D2BC990B2538FFE1EA03 /* DJLogger */ = {
+		4756FF51940A412E3C1C67C62FB84639 /* DJLogger-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1D1D11A3AB35468EF69EEF851189067 /* Build configuration list for PBXNativeTarget "DJLogger" */;
+			buildConfigurationList = 8D6A66B1B4685EB4C2F2AAF940F0F2CE /* Build configuration list for PBXNativeTarget "DJLogger-iOS" */;
 			buildPhases = (
-				887785296EBE47FCAEEA618964ABEF11 /* Headers */,
-				353D9D1E3B33998F6B2E7F6E1D53FC6C /* Sources */,
-				902B04096D84CA279FDE6472FDF3DBAD /* Frameworks */,
-				46C1DA10399FCC9271D6A6BAE8528DCF /* Resources */,
+				D895F10AC2D281E48234CE725E2985CA /* Headers */,
+				705CDBE3C33D200D9AC0E9BDDF972069 /* Sources */,
+				937F4F2412475BD5303999D9E244DA51 /* Frameworks */,
+				0E41337938AF20BD187A0FA3CEC4DC94 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DJLogger;
+			name = "DJLogger-iOS";
 			productName = DJLogger;
-			productReference = D2A9F586555FBD63C4BFE6EFE1A71EA4 /* DJLogger.framework */;
+			productReference = D5A09B58087ECE561F19CFF496C72A3B /* DJLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7F4B48B375C45E75E5B8296BBF35A9BB /* Pods-DJLogger_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E576F9A44B8C9B227328E29A896717D3 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Tests" */;
+			buildPhases = (
+				A8F8464FB65DC2651C7FE363F77BC08E /* Headers */,
+				A25D1BA264266CBCE263B43507AF3C26 /* Sources */,
+				44900D6552F497ACFC810CC6FE0A40FC /* Frameworks */,
+				2D2F8761DF9BD46745DDEAE3BF828738 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				984DFD2810EC6B86A2A57D1F513A8B09 /* PBXTargetDependency */,
+			);
+			name = "Pods-DJLogger_Tests";
+			productName = Pods_DJLogger_Tests;
+			productReference = 11D9E2DD71B23B69BE821318BCD8588D /* Pods-DJLogger_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+		A7362720BFB641DD0C6834385B8A0B2B /* Pods-DJLogger_Watch_Example_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F1E3FB790C87232740A74A9E323D574 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Watch_Example_App" */;
+			buildPhases = (
+				79634CC32584D7234DE19F1D9D2B8142 /* Headers */,
+				20473684E69023CC8660A230F0D32033 /* Sources */,
+				B26CAF7693FF418ED62597E912350E26 /* Frameworks */,
+				F16A95C4D6F3F3F4F6FDBDBA1C520ABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE2FAE4F64BD78C76A08046FE996A8C3 /* PBXTargetDependency */,
+			);
+			name = "Pods-DJLogger_Watch_Example_App";
+			productName = Pods_DJLogger_Watch_Example_App;
+			productReference = E54A5E9D95972718F371C6FBF207EF34 /* Pods-DJLogger_Watch_Example_App */;
 			productType = "com.apple.product-type.framework";
 		};
 		F9A9F0F043848CCD984F969D8A924B36 /* Pods-DJLogger_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0321A3DB35310DDD9CF1AF934C030F69 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Example" */;
+			buildConfigurationList = AEE1D87160EC4585F63996836570776C /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Example" */;
 			buildPhases = (
-				57658BF09CF4F7F56EAC1EF84D960452 /* Headers */,
-				BDD9E2B9F89B858A3AEB0FDA0CCB4018 /* Sources */,
-				62C5B33AF9AABDFE0311BE6FAD83C063 /* Frameworks */,
-				C5DDD2FDABC53C3FB09207A238ED6219 /* Resources */,
+				647C810378E216810F3421B2B23EC563 /* Headers */,
+				F2FBD42EC09FD68BBB3D22EE528AE3F8 /* Sources */,
+				B3F5521992C9009D91BAA1358D9C5DAF /* Frameworks */,
+				73FFD08A7F8798AC171E284BEBF8B482 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				587C10BDC4259B3A54ACF5E3A9B89287 /* PBXTargetDependency */,
+				1CA3C213FD170240FF0D98E9590BECE5 /* PBXTargetDependency */,
 			);
 			name = "Pods-DJLogger_Example";
-			productName = "Pods-DJLogger_Example";
-			productReference = 023B3DDD9493E6B4E1F74354A941BF94 /* Pods_DJLogger_Example.framework */;
+			productName = Pods_DJLogger_Example;
+			productReference = 023B3DDD9493E6B4E1F74354A941BF94 /* Pods-DJLogger_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -442,45 +612,61 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 8D991BA024C3D5D235732498165D4E2E /* Products */;
+			productRefGroup = E3E04B338520B61EEF9601B5F5AFADD3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D4665769DE9D2BC990B2538FFE1EA03 /* DJLogger */,
+				4756FF51940A412E3C1C67C62FB84639 /* DJLogger-iOS */,
+				00BCC10501040F4251041B796CC8C0F9 /* DJLogger-watchOS */,
 				F9A9F0F043848CCD984F969D8A924B36 /* Pods-DJLogger_Example */,
 				7F4B48B375C45E75E5B8296BBF35A9BB /* Pods-DJLogger_Tests */,
+				A7362720BFB641DD0C6834385B8A0B2B /* Pods-DJLogger_Watch_Example_App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		46C1DA10399FCC9271D6A6BAE8528DCF /* Resources */ = {
+		0E41337938AF20BD187A0FA3CEC4DC94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92DA4A7286AE2FC006192694B995CE41 /* Resources */ = {
+		2D2F8761DF9BD46745DDEAE3BF828738 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5DDD2FDABC53C3FB09207A238ED6219 /* Resources */ = {
+		73FFD08A7F8798AC171E284BEBF8B482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA40DF6DF994109C9A4325B2BCF88006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F16A95C4D6F3F3F4F6FDBDBA1C520ABD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -490,70 +676,176 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1EAE1AEBC762637689DE7E672169DC61 /* Sources */ = {
+		20473684E69023CC8660A230F0D32033 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF32BD93CFD2A99D9A704FCAE38DFD3 /* Pods-DJLogger_Tests-dummy.m in Sources */,
+				B8F8798F73A859C99DC51AB9B1964C6F /* Pods-DJLogger_Watch_Example_App-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		353D9D1E3B33998F6B2E7F6E1D53FC6C /* Sources */ = {
+		65BCE3F5B9D936FFBC094D5AC6BAEC64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C7FF6B426270B8C009CAC1D /* DJLLogHandlerProtocol.swift in Sources */,
-				55A07443DE680D87E4D979E018B9592A /* DJLogger-dummy.m in Sources */,
-				3C305F0426529AEE00C0621B /* DJLPreviewHandler.swift in Sources */,
-				3C7FF6D926272089009CAC1D /* DJLLogger+extensions.swift in Sources */,
-				3C25633A262457F200BFADD3 /* DJLLogger.swift in Sources */,
-				3C256339262457F200BFADD3 /* DJLFolderMonitor.swift in Sources */,
-				3C7FF6C126270DE3009CAC1D /* DJLFileHandlerConfiguration.swift in Sources */,
-				3C7FF6F026273A19009CAC1D /* Array+groupByDateComponents.swift in Sources */,
-				3C7FF6E8262731D2009CAC1D /* PaddingLabel.swift in Sources */,
-				3C7FF6F526273AC9009CAC1D /* DJLFileLog+extension.swift in Sources */,
-				3C256335262457F200BFADD3 /* DJLFileHandler.swift in Sources */,
-				3C256332262457F200BFADD3 /* DJLLogFilterViewController.swift in Sources */,
-				3C7FF6BC26270DC5009CAC1D /* DJLFileReader.swift in Sources */,
-				3C256333262457F200BFADD3 /* DJLLogCell.swift in Sources */,
-				3C256338262457F200BFADD3 /* DJLFileLog.swift in Sources */,
-				3C305F082652A62800C0621B /* DJLLogFilterSettings.swift in Sources */,
-				3C7FF6D026271CD7009CAC1D /* DJLLoggerConfiguration.swift in Sources */,
-				3C305F0A2652AF1C00C0621B /* FileManager+extensions.swift in Sources */,
-				3C256334262457F200BFADD3 /* DJLLogViewController.swift in Sources */,
-				3C256336262457F200BFADD3 /* DJLConsoleHandler.swift in Sources */,
+				4E628CCC46F56221D6EDAC5803E1448D /* Array+groupByDateComponents.swift in Sources */,
+				B50E703152A1212636230FBCD3B9985D /* DJLConsoleHandler.swift in Sources */,
+				64B6C084145004AF0C6FF91D31BED477 /* DJLFileHandler.swift in Sources */,
+				D20A03495D61AAD9717B1356FB14E4C5 /* DJLFileHandlerConfiguration.swift in Sources */,
+				D7C663880A604A30DB6C90FE50D03E31 /* DJLFileLog.swift in Sources */,
+				3DE2F03CF9F57C9763DC9D04A220B458 /* DJLFileLog+extension.swift in Sources */,
+				371FC952FDB00A905FC1628B0D8D12B4 /* DJLFileReader.swift in Sources */,
+				2DC992F9E2BD029956A8B55BFE433F03 /* DJLFolderMonitor.swift in Sources */,
+				DACD741FA5BA90B3F60FBCB1C2A418C3 /* DJLLogCell.swift in Sources */,
+				5A5E71686EAC6E8547651E92FD8E3D91 /* DJLLogFilterSettings.swift in Sources */,
+				4FE2C003555C82052E3598DE0BBA3FA3 /* DJLLogFilterViewController.swift in Sources */,
+				2EE67ECAED4E8909546A62881A2AD300 /* DJLLogger.swift in Sources */,
+				0FF1755EDDCE5671833ED4ED6C52930A /* DJLLogger+extensions.swift in Sources */,
+				C9EE7D0943078DB12A1123A421E1092E /* DJLLoggerConfiguration.swift in Sources */,
+				4DB699580FCF693D2C65668A50895E59 /* DJLLogHandlerProtocol.swift in Sources */,
+				1141891C8AC8C16489F28FB42FBFB031 /* DJLLogView.swift in Sources */,
+				EDDA3722F02E2AC86E0E9ED583A3F777 /* DJLLogViewController.swift in Sources */,
+				D23F5AF3ABA5266D9721D73FFF14FCE2 /* DJLogger-watchOS-dummy.m in Sources */,
+				4361069F4F0790AAA862C039F39A3F9F /* DJLPreviewHandler.swift in Sources */,
+				B8A64C59DE0D395373D6128DF4DE8AF3 /* FileManager+extensions.swift in Sources */,
+				94357946FAA9B6FF701BB4CA78569235 /* PaddingLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDD9E2B9F89B858A3AEB0FDA0CCB4018 /* Sources */ = {
+		705CDBE3C33D200D9AC0E9BDDF972069 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F10AA96825E79376DCC4D164EB222FF9 /* Pods-DJLogger_Example-dummy.m in Sources */,
+				96B2A831C90331636EDEB680A240E2E6 /* Array+groupByDateComponents.swift in Sources */,
+				8C5F371BF2F476794E07642F584B4801 /* DJLConsoleHandler.swift in Sources */,
+				D04CD7801A8C7B5232189A7F72371FFD /* DJLFileHandler.swift in Sources */,
+				3E1C3269DC950AE18F913449C1FCA59E /* DJLFileHandlerConfiguration.swift in Sources */,
+				059D231A3C771921977A07D8C14B6101 /* DJLFileLog.swift in Sources */,
+				2064D667A5815C6D777BD139BF6EA70F /* DJLFileLog+extension.swift in Sources */,
+				D3A145CA999A80620293E9BEAC17BF61 /* DJLFileReader.swift in Sources */,
+				43BDEFC82FECAB81FD05573C37150542 /* DJLFolderMonitor.swift in Sources */,
+				781DBB473921D32F06A3AC0F90F57EE2 /* DJLLogCell.swift in Sources */,
+				B71ECF62BE912E868CE1D27BA6634AA2 /* DJLLogFilterSettings.swift in Sources */,
+				D9D1DDCE9E4814D0B197468118EDCD67 /* DJLLogFilterViewController.swift in Sources */,
+				298BA99C9E185C1AB62E014D503C4C56 /* DJLLogger.swift in Sources */,
+				D940F0AC154F816FC680674D7B5AEC1A /* DJLLogger+extensions.swift in Sources */,
+				76F7F735BD84BB88AF3E99CD8562616A /* DJLLoggerConfiguration.swift in Sources */,
+				4E2E13178B43882DC12951B979765429 /* DJLLogHandlerProtocol.swift in Sources */,
+				B0EE381C125F14D7CDBC749EA1864835 /* DJLLogView.swift in Sources */,
+				592FD14DF9CB595611030B6A7AC2AEAC /* DJLLogViewController.swift in Sources */,
+				485CEF4A74C96B5DA68F1D06BC959CDE /* DJLogger-iOS-dummy.m in Sources */,
+				FFFE857DB235165A6551DF9808F0B950 /* DJLPreviewHandler.swift in Sources */,
+				7E676B1577F28628DCA8A5B1BF333FC7 /* FileManager+extensions.swift in Sources */,
+				3B689CDA89F135D52F500B1114B65A61 /* PaddingLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25D1BA264266CBCE263B43507AF3C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A58C9653931EF61A2A26450FDA5F4D2 /* Pods-DJLogger_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2FBD42EC09FD68BBB3D22EE528AE3F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C64CD348F2C32A4970F51D2A1A91C3 /* Pods-DJLogger_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		587C10BDC4259B3A54ACF5E3A9B89287 /* PBXTargetDependency */ = {
+		1CA3C213FD170240FF0D98E9590BECE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DJLogger;
-			target = 8D4665769DE9D2BC990B2538FFE1EA03 /* DJLogger */;
-			targetProxy = 0CDFFAC6C1092B475F761A5979501160 /* PBXContainerItemProxy */;
+			name = "DJLogger-iOS";
+			target = 4756FF51940A412E3C1C67C62FB84639 /* DJLogger-iOS */;
+			targetProxy = ACB8759ECF7DE3F1823056907001D0E7 /* PBXContainerItemProxy */;
 		};
-		688D3BD8BF5DFD20B513F3B8803DC84E /* PBXTargetDependency */ = {
+		984DFD2810EC6B86A2A57D1F513A8B09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-DJLogger_Example";
 			target = F9A9F0F043848CCD984F969D8A924B36 /* Pods-DJLogger_Example */;
-			targetProxy = 0CEE5BEF9A7CD22EB293DC6D266DFE7F /* PBXContainerItemProxy */;
+			targetProxy = 66560798EC6D8D299F6C1D34AFF0394C /* PBXContainerItemProxy */;
+		};
+		CE2FAE4F64BD78C76A08046FE996A8C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DJLogger-watchOS";
+			target = 00BCC10501040F4251041B796CC8C0F9 /* DJLogger-watchOS */;
+			targetProxy = EA5C8C902CAC19B22D811B33120E4A23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1BB8F58C0D74B6E04A3D678964ACFEA5 /* Release */ = {
+		1AF99D476BA4AF56230A7D86916D28E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD46E65D253A66AD3A4B38AA03EAD2C0 /* Pods-DJLogger_Example.release.xcconfig */;
+			baseConfigurationReference = 1F7491CC6917F6D6BC4EDEEE773A3EBB /* DJLogger-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DJLogger-iOS/DJLogger-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DJLogger-iOS/DJLogger-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DJLogger-iOS/DJLogger-iOS.modulemap";
+				PRODUCT_MODULE_NAME = DJLogger;
+				PRODUCT_NAME = DJLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3A203219996930CD22E91AA42ABDA2A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD2FB396639CBDEEC2C35566EB76A40 /* DJLogger-watchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS.modulemap";
+				PRODUCT_MODULE_NAME = DJLogger;
+				PRODUCT_NAME = DJLogger;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		49797F50C6CAC69FBD45551AEB06A950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E152DCF19BA23381DEA12DA3CECEAA1 /* Pods-DJLogger_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -564,12 +856,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -577,7 +869,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -585,7 +876,7 @@
 			};
 			name = Release;
 		};
-		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+		5126AD10A69AEB663936518135FBC90C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -638,7 +929,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -648,13 +939,15 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
 		};
-		4172BD5E33EB941BCE42FB3C6CC5F799 /* Debug */ = {
+		5E0E208987C890910FB2960FD7286A3D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71F6625C1704CB31044E6071AA3CE5BA /* DJLogger.debug.xcconfig */;
+			baseConfigurationReference = 2729A416D2AE3E301E1B7BD12C817B7E /* DJLogger-watchOS.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -663,60 +956,126 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DJLogger/DJLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DJLogger/DJLogger-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DJLogger/DJLogger.modulemap";
+				MODULEMAP_FILE = "Target Support Files/DJLogger-watchOS/DJLogger-watchOS.modulemap";
 				PRODUCT_MODULE_NAME = DJLogger;
 				PRODUCT_NAME = DJLogger;
-				SDKROOT = iphoneos;
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5CFEE29ADB0F9AA6A4B1D60C0418185C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FDC62A3F3F93BA9CD95B6FA746FBD78 /* DJLogger.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DJLogger/DJLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DJLogger/DJLogger-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DJLogger/DJLogger.modulemap";
-				PRODUCT_MODULE_NAME = DJLogger;
-				PRODUCT_NAME = DJLogger;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
-		78123062C88C940DF43FA0DEA146B564 /* Debug */ = {
+		6109D3C81653A38C0C6A07023DD70E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35C62437A2EDA30BB60E8CD785FB892B /* Pods-DJLogger_Tests.debug.xcconfig */;
+			baseConfigurationReference = F7CF43853AF0E73232F3D9CCCCE3D623 /* Pods-DJLogger_Watch_Example_App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Watch_Example_App/Pods-DJLogger_Watch_Example_App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Watch_Example_App/Pods-DJLogger_Watch_Example_App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		6381E38036DB8FE940CF64E30A0E1D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C93587461ECB3915433F0B3D5581609 /* DJLogger-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DJLogger-iOS/DJLogger-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DJLogger-iOS/DJLogger-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DJLogger-iOS/DJLogger-iOS.modulemap";
+				PRODUCT_MODULE_NAME = DJLogger;
+				PRODUCT_NAME = DJLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6B4E5E7E48D2492430923040A11473C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35AD8C11378FC6EDF318990DFE2CE208 /* Pods-DJLogger_Watch_Example_App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Watch_Example_App/Pods-DJLogger_Watch_Example_App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Watch_Example_App/Pods-DJLogger_Watch_Example_App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		77FFC6B176549732EC117FCD043B33FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76B6C037280CA6911163F25AE8BA25DA /* Pods-DJLogger_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -727,12 +1086,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -740,14 +1099,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+		9AE5FE4DEE8C2EAE179A12DC311174F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -797,7 +1156,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,12 +1164,13 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
 		};
-		EB986296C409089B8BC7E22C596FFED4 /* Release */ = {
+		9B877DBE56E0BD8BA596BF2B9A403F7D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D1F8DC4F4045A4C4E9A37C1000CFAFD /* Pods-DJLogger_Tests.release.xcconfig */;
+			baseConfigurationReference = E1A8601C43FC7F47D5D8EF96CC28104B /* Pods-DJLogger_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -823,7 +1183,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Tests/Pods-DJLogger_Tests.modulemap";
@@ -834,17 +1194,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		FA2D90BAD84350C53EF8FCD04820BC43 /* Debug */ = {
+		FF1E40DE353BBCAC6CA1191FDC5CAD04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 830C0607089C028237BB38C62C119CDA /* Pods-DJLogger_Example.debug.xcconfig */;
+			baseConfigurationReference = 4EDEB0AFB8DBD1F783DD6603E008200A /* Pods-DJLogger_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -857,7 +1215,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example.modulemap";
@@ -868,7 +1226,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -878,11 +1235,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0321A3DB35310DDD9CF1AF934C030F69 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Example" */ = {
+		0F1E3FB790C87232740A74A9E323D574 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Watch_Example_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA2D90BAD84350C53EF8FCD04820BC43 /* Debug */,
-				1BB8F58C0D74B6E04A3D678964ACFEA5 /* Release */,
+				6109D3C81653A38C0C6A07023DD70E72 /* Debug */,
+				6B4E5E7E48D2492430923040A11473C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -890,26 +1247,44 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
-				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+				5126AD10A69AEB663936518135FBC90C /* Debug */,
+				9AE5FE4DEE8C2EAE179A12DC311174F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D277B18D324BA3701784E37F53552B3 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Tests" */ = {
+		8D6A66B1B4685EB4C2F2AAF940F0F2CE /* Build configuration list for PBXNativeTarget "DJLogger-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				78123062C88C940DF43FA0DEA146B564 /* Debug */,
-				EB986296C409089B8BC7E22C596FFED4 /* Release */,
+				6381E38036DB8FE940CF64E30A0E1D9C /* Debug */,
+				1AF99D476BA4AF56230A7D86916D28E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1D1D11A3AB35468EF69EEF851189067 /* Build configuration list for PBXNativeTarget "DJLogger" */ = {
+		AEE1D87160EC4585F63996836570776C /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4172BD5E33EB941BCE42FB3C6CC5F799 /* Debug */,
-				5CFEE29ADB0F9AA6A4B1D60C0418185C /* Release */,
+				FF1E40DE353BBCAC6CA1191FDC5CAD04 /* Debug */,
+				77FFC6B176549732EC117FCD043B33FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7015CFD7EB875EC9226A5709600C925 /* Build configuration list for PBXNativeTarget "DJLogger-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A203219996930CD22E91AA42ABDA2A2 /* Debug */,
+				5E0E208987C890910FB2960FD7286A3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E576F9A44B8C9B227328E29A896717D3 /* Build configuration list for PBXNativeTarget "Pods-DJLogger_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B877DBE56E0BD8BA596BF2B9A403F7D /* Debug */,
+				49797F50C6CAC69FBD45551AEB06A950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

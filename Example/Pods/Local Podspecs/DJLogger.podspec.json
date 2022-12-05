@@ -1,22 +1,23 @@
 {
   "name": "DJLogger",
   "version": "0.1.0",
-  "summary": "A short description of DJLogger.",
+  "summary": "Simple iOS console/file logger with optional log user interface.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/David Jonsén/DJLogger",
+  "homepage": "https://github.com/davnag/DJLogger",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "David Jonsén": "david.jonsen@bontouch.se"
+    "David Jonsén": "dev.jonsen@outlook.com"
   },
   "source": {
-    "git": "https://github.com/David Jonsén/DJLogger.git",
+    "git": "https://github.com/davnag/DJLogger.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "13.6",
+    "watchos": "9.0"
   },
   "source_files": "DJLogger/Classes/**/*"
 }

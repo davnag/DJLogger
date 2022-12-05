@@ -28,6 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/davnag/DJLogger.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.6'
+  s.watchos.deployment_target = '9.0'
 
   s.source_files = 'DJLogger/Classes/**/*'
   

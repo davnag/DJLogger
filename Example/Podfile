@@ -1,13 +1,21 @@
 use_frameworks!
 
-platform :ios, '9.0'
-
 target 'DJLogger_Example' do
+  
+  platform :ios, '9.0'
+  
   pod 'DJLogger', :path => '../'
 
   target 'DJLogger_Tests' do
     inherit! :search_paths
-
     
   end
+  
+end
+
+
+target 'DJLogger_Watch_Example_App' do
+  
+  pod 'DJLogger', :path => '../'
+
 end

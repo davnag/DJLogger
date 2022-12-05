@@ -22,6 +22,8 @@
  THE SOFTWARE.
  */
 
+#if os(iOS)
+
 import UIKit
 
 private extension DJLLogger.Level {
@@ -174,3 +176,5 @@ extension DJLLogCell {
         ])
     }
 }
+
+#endif

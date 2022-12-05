@@ -1,0 +1,6 @@
+framework module DJLogger {
+  umbrella header "DJLogger-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

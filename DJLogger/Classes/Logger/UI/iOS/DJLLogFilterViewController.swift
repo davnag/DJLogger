@@ -41,6 +41,8 @@ struct DJLLogFilterRow {
     let type: RowType
 }
 
+#if os(iOS)
+
 public final class DJLLogFilterViewController: UITableViewController {
     
     private let settings: DJLLogFilterSettings
@@ -179,3 +181,5 @@ extension DJLLogFilterViewController {
         return sections[section].title
     }
 }
+
+#endif

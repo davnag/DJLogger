@@ -1,5 +1,5 @@
 framework module DJLogger {
-  umbrella header "DJLogger-umbrella.h"
+  umbrella header "DJLogger-watchOS-umbrella.h"
 
   export *
   module * { export * }
