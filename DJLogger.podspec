@@ -28,14 +28,13 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/davnag/DJLogger.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.6'
+  
   s.watchos.deployment_target = '9.0'
 
-  s.source_files = 'DJLogger/Classes/**/*'
+  s.source_files = 'DJLogger/Classes/Logger/**/*'
   
-  # s.resource_bundles = {
-  #   'DJLogger' => ['DJLogger/Assets/*.png']
-  # }
+  s.ios.source_files = 'DJLogger/Classes/iOS/**/*'
+  
+  s.watchos.source_files = 'DJLogger/Classes/WatchOS/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit'
 end
