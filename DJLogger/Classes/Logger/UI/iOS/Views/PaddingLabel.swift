@@ -22,6 +22,8 @@
  THE SOFTWARE.
  */
 
+#if os(iOS)
+
 import UIKit
 
 class PaddingLabel: UILabel {
@@ -39,3 +41,5 @@ class PaddingLabel: UILabel {
         return CGSize(width: width, height: heigth)
     }
 }
+
+#endif

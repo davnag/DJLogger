@@ -22,6 +22,8 @@
  THE SOFTWARE.
  */
 
+#if os(iOS)
+
 import QuickLook
 
 final class DJLPreviewHandler: NSObject, QLPreviewControllerDataSource, QLPreviewControllerDelegate {
@@ -63,3 +65,5 @@ final class DJLPreviewHandler: NSObject, QLPreviewControllerDataSource, QLPrevie
         controllerDidDismissHandler?()
     }
 }
+
+#endif

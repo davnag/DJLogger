@@ -22,6 +22,8 @@
  THE SOFTWARE.
  */
 
+#if os(iOS)
+
 import UIKit
 import Combine
 
@@ -517,3 +519,5 @@ extension DJLLogViewController: UIAdaptivePresentationControllerDelegate {
         startRefreshTimer()
     }
 }
+
+#endif
