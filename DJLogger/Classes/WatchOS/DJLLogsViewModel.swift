@@ -41,7 +41,7 @@ final class DJLLogsViewModel: ObservableObject {
     private var refreshLogsTimer: Timer?
     private var refreshLogsStatusTimer: Timer?
     
-    private var settings = DJLLogFilterSettings()
+    var settings = DJLLogFilterSettings()
     
     private var logs: [DJLFileLog] = []
     
@@ -121,7 +121,7 @@ final class DJLLogsViewModel: ObservableObject {
                 }
                 
                 self?.logs = logs
-                //self?.updateSettingsLables(with: logs)
+                self?.updateSettingsLables(with: logs)
                 self?.filter(logs)
             }
         }
@@ -147,5 +147,20 @@ final class DJLLogsViewModel: ObservableObject {
         let sections = grouped.compactMap({ DJLLogSection(date: $0.key, items: $0.value) })
         
         self.sections = sections.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+    }
+    
+    private func updateSettingsLables(with logs: [DJLFileLog]) {
+        
+        let uniqueLabels = Set(logs.map({ $0.label })).sorted(by: { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending })
+        settings.labels = uniqueLabels
+        
+        let selectedLabels = settings.selectedLabels
+        for selectedLabel in selectedLabels {
+            
+            if uniqueLabels.contains(selectedLabel) == false {
+                
+                settings.selectedLabels.removeAll(where: { $0 == selectedLabel })
+            }
+        }
     }
 }

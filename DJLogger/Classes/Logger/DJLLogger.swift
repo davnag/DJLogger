@@ -33,6 +33,16 @@ public struct DJLLogger {
         case warning = 2
         case error = 3
         case critical = 4
+        
+        init(_ title: String) {
+           
+            if let level = Self.allCases.first(where: { $0.name.lowercased() == title.lowercased() }) {
+                self = level
+                return
+            }
+            
+            fatalError()
+        }
     }
     
     public let label: String

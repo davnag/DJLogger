@@ -23,12 +23,18 @@
  */
 import Foundation
 
-public final class DJLLogFilterSettings {
+public final class DJLLogFilterSettings: ObservableObject {
     
+    @Published
     public var labels: [String] = []
+    
+    @Published
     public var selectedLabels: [String] = []
+    
+    @Published
     public var levels: [DJLLogger.Level] = DJLLogger.Level.allCases
     
+    @Published
     public var isPaused: Bool = false
     
     var active: Bool {
@@ -38,5 +44,21 @@ public final class DJLLogFilterSettings {
         }
         
         return levels.count != DJLLogger.Level.allCases.count
+    }
+}
+
+extension DJLLogFilterSettings {
+    
+    func toggleLevel(_ title: String) {
+        
+        if levels.compactMap({ $0.name }).contains(title) {
+            levels.removeAll { level in
+                level.name == title
+            }
+        } else {
+            levels.append(DJLLogger.Level(title))
+        }
+        
+        objectWillChange.send()
     }
 }

@@ -25,6 +25,9 @@
 		3CBB64E5293F9D1F009F71A7 /* DJLLogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64E2293F9D1F009F71A7 /* DJLLogsViewModel.swift */; };
 		3CBB64E6293F9D1F009F71A7 /* DJLLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64E3293F9D1F009F71A7 /* DJLLogView.swift */; };
 		3CBB64E7293F9D1F009F71A7 /* DJLLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64E4293F9D1F009F71A7 /* DJLLogsView.swift */; };
+		3CBB64E9293FD7F8009F71A7 /* DJLLogsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64E8293FD7F8009F71A7 /* DJLLogsFilterView.swift */; };
+		3CBB64EB293FD829009F71A7 /* DJLLogFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64EA293FD829009F71A7 /* DJLLogFilterSection.swift */; };
+		3CBB64EC293FD829009F71A7 /* DJLLogFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64EA293FD829009F71A7 /* DJLLogFilterSection.swift */; };
 		3DE2F03CF9F57C9763DC9D04A220B458 /* DJLFileLog+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2569AB14B8044E3463B32EDCDC5E4D35 /* DJLFileLog+extension.swift */; };
 		3E1C3269DC950AE18F913449C1FCA59E /* DJLFileHandlerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E747475505FD193F72D2DEEB5769E /* DJLFileHandlerConfiguration.swift */; };
 		43AF93399AE64D5C216299017BE2FC38 /* Pods-DJLogger_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5601DD7FD545974E56D4224639F94B44 /* Pods-DJLogger_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -105,6 +108,8 @@
 		3CBB64E2293F9D1F009F71A7 /* DJLLogsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogsViewModel.swift; sourceTree = "<group>"; };
 		3CBB64E3293F9D1F009F71A7 /* DJLLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogView.swift; sourceTree = "<group>"; };
 		3CBB64E4293F9D1F009F71A7 /* DJLLogsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogsView.swift; sourceTree = "<group>"; };
+		3CBB64E8293FD7F8009F71A7 /* DJLLogsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogsFilterView.swift; sourceTree = "<group>"; };
+		3CBB64EA293FD829009F71A7 /* DJLLogFilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogFilterSection.swift; sourceTree = "<group>"; };
 		4EDEB0AFB8DBD1F783DD6603E008200A /* Pods-DJLogger_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DJLogger_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		52770E19337C3239BBEB4520AFCBF350 /* DJLogger-watchOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "DJLogger-watchOS-Info.plist"; path = "../DJLogger-watchOS/DJLogger-watchOS-Info.plist"; sourceTree = "<group>"; };
 		5601DD7FD545974E56D4224639F94B44 /* Pods-DJLogger_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DJLogger_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */,
+				3CBB64EA293FD829009F71A7 /* DJLLogFilterSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,9 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				3CBB64D6293F9D12009F71A7 /* DJLLogFilterViewController.swift */,
+				3CBB64DB293F9D12009F71A7 /* DJLLogViewController.swift */,
 				3CBB64D7293F9D12009F71A7 /* DJLPreviewHandler.swift */,
 				3CBB64D8293F9D12009F71A7 /* Views */,
-				3CBB64DB293F9D12009F71A7 /* DJLLogViewController.swift */,
 			);
 			name = iOS;
 			path = ../../iOS;
@@ -283,6 +289,7 @@
 		3CBB64E1293F9D1F009F71A7 /* WatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				3CBB64E8293FD7F8009F71A7 /* DJLLogsFilterView.swift */,
 				3CBB64E2293F9D1F009F71A7 /* DJLLogsViewModel.swift */,
 				3CBB64E4293F9D1F009F71A7 /* DJLLogsView.swift */,
 				3CBB64E3293F9D1F009F71A7 /* DJLLogView.swift */,
@@ -693,6 +700,8 @@
 				3CBB64C5293F8FEF009F71A7 /* DJLLogFilterSettings.swift in Sources */,
 				4E628CCC46F56221D6EDAC5803E1448D /* Array+groupByDateComponents.swift in Sources */,
 				3CBB64E7293F9D1F009F71A7 /* DJLLogsView.swift in Sources */,
+				3CBB64EC293FD829009F71A7 /* DJLLogFilterSection.swift in Sources */,
+				3CBB64E9293FD7F8009F71A7 /* DJLLogsFilterView.swift in Sources */,
 				B50E703152A1212636230FBCD3B9985D /* DJLConsoleHandler.swift in Sources */,
 				64B6C084145004AF0C6FF91D31BED477 /* DJLFileHandler.swift in Sources */,
 				D20A03495D61AAD9717B1356FB14E4C5 /* DJLFileHandlerConfiguration.swift in Sources */,
@@ -729,6 +738,7 @@
 				B71ECF62BE912E868CE1D27BA6634AA2 /* DJLLogFilterSettings.swift in Sources */,
 				3CBB64DD293F9D12009F71A7 /* DJLPreviewHandler.swift in Sources */,
 				298BA99C9E185C1AB62E014D503C4C56 /* DJLLogger.swift in Sources */,
+				3CBB64EB293FD829009F71A7 /* DJLLogFilterSection.swift in Sources */,
 				D940F0AC154F816FC680674D7B5AEC1A /* DJLLogger+extensions.swift in Sources */,
 				76F7F735BD84BB88AF3E99CD8562616A /* DJLLoggerConfiguration.swift in Sources */,
 				4E2E13178B43882DC12951B979765429 /* DJLLogHandlerProtocol.swift in Sources */,

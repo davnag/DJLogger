@@ -30,8 +30,14 @@ public struct DJLLogsView: View {
     private var dismiss
     
     @State
-    private var isPresentingRemoveLogsDialog: Bool = false
+    private var isPresentingMenuDialog: Bool = false
+
+    @State
+    private var isPresentingDeleteAllLogsDialog: Bool = false
     
+    @State
+    private var isPresentingFiltersSheet: Bool = false
+
     @StateObject
     private var viewModel: DJLLogsViewModel
     
@@ -43,24 +49,36 @@ public struct DJLLogsView: View {
         
         NavigationStack {
             
-            ScrollView {
+            Group {
 
-                LazyVStack {
+                if viewModel.sections.isEmpty {
                     
-                    ForEach(viewModel.sections) { section in
+                    Text("No Logs")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                    
+                } else {
+                    
+                    ScrollView {
                         
-                        Section {
+                        LazyVStack {
                             
-                            ForEach(section.items) { log in
-                                DJLLogView(log: log)
+                            ForEach(viewModel.sections) { section in
+                                
+                                Section {
+                                    
+                                    ForEach(section.items) { log in
+                                        DJLLogView(log: log)
+                                    }
+                                    
+                                } header: {
+                                    
+                                    Text(section.date, style: .date)
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.horizontal, 10)
+                                }
                             }
-                            
-                        } header: {
-                            
-                            Text(section.date, style: .date)
-                                .font(.headline)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.horizontal, 10)
                         }
                     }
                 }
@@ -70,38 +88,20 @@ public struct DJLLogsView: View {
                 
                 ToolbarItemGroup(placement: .cancellationAction) {
                     
-                    Button("Done", role: .cancel) {
+                    Button("Close", role: .cancel) {
                         
                         dismiss()
                     }
                 }
                 
                 ToolbarItemGroup(placement: .confirmationAction) {
-                    
-                    HStack {
-                        
-                        Button(role: .destructive) {
-                            isPresentingRemoveLogsDialog = true
-                        } label: {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
-                        }
-                        .confirmationDialog("Clear Logs", isPresented: $isPresentingRemoveLogsDialog) {
-                            
-                            Button("Yes", role: .destructive) {
-                                self.viewModel.clearLogs()
-                            }
-                            
-                        } message: {
-                            Text("Do you want to Clear All Logs?")
-                        }
 
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "line.3.horizontal.decrease.circle")
-                        }
+                    Button {
+                        isPresentingMenuDialog = true
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
                     }
+                    .foregroundColor(.blue)
                 }
             }
             .onAppear {
@@ -111,9 +111,93 @@ public struct DJLLogsView: View {
             .onDisappear {
                 viewModel.stopRefreshTimer()
             }
+            .sheet(isPresented: $isPresentingMenuDialog) {
+                
+                DJLLogsMenuView {
+                    isPresentingFiltersSheet = true
+                } clearAction: {
+                    isPresentingDeleteAllLogsDialog = true
+                }
+            }
+            .sheet(isPresented: $isPresentingFiltersSheet) {
+                
+                DJLLogsFilterView(settings: viewModel.settings)
+            }
+            .confirmationDialog("Do you want to clear all logs?", isPresented: $isPresentingDeleteAllLogsDialog) {
+                
+                Button("Yes", role: .destructive) {
+                    self.viewModel.clearLogs()
+                }
+            }
         }
     }
 }
+
+// MARK: - DJLLogsMenuView
+
+struct DJLLogsMenuView: View {
+    
+    private enum MenuAction {
+        case none
+        case filter
+        case clear
+    }
+    
+    @State
+    private var menuAction: MenuAction = .none
+    
+    @Environment(\.dismiss)
+    private var dismiss
+    
+    var filterAction: () -> Void
+    
+    var clearAction: () -> Void
+
+    init(filterAction: @escaping () -> Void, clearAction: @escaping () -> Void) {
+        self.filterAction = filterAction
+        self.clearAction = clearAction
+    }
+    
+    var body: some View {
+        
+        ScrollView {
+            
+            Button {
+                menuAction = .filter
+                dismiss()
+            } label: {
+                Label("Filters", systemImage: "line.3.horizontal.decrease.circle")
+            }
+
+            Button(role: .destructive) {
+                menuAction = .clear
+                dismiss()
+            } label: {
+                Label("Clear Logs", systemImage: "trash")
+            }
+
+            Button("Cancel", role: .cancel) {
+                dismiss()
+            }
+            .padding(.top)
+        }
+        .onDisappear {
+            
+            switch menuAction {
+            case .filter:
+                filterAction()
+            case .clear:
+                clearAction()
+            default:
+                break
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Menu")
+    }
+}
+
+// MARK: - Previews
 
 struct DJLLogsView_Previews: PreviewProvider {
     static var previews: some View {

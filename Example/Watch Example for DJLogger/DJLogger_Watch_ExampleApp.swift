@@ -7,12 +7,21 @@
 //
 
 import SwiftUI
+import DJLogger
 
 @main
-struct DJLogger_Watch_Example_Watch_AppApp: App {
+struct DJLogger_Watch_Example: App {
+    
+    @State
+    private var logger = DJLLogger("App", [DJLConsoleHandler(), DJLFileHandler("Watch")])
+    
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
+                .onAppear {
+                    logger.trace("On Appear")
+                }
         }
     }
 }

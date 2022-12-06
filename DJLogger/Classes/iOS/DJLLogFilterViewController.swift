@@ -24,23 +24,6 @@
 
 import UIKit
 
-struct DJLLogFilterSection {
-    let title: String
-    let items: [DJLLogFilterRow]
-}
-
-struct DJLLogFilterRow {
-    
-    enum RowType {
-        case checkmark
-    }
-    
-    let title: String
-    let group: String
-    
-    let type: RowType
-}
-
 #if os(iOS)
 
 public final class DJLLogFilterViewController: UITableViewController {
