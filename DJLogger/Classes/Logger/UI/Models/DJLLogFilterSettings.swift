@@ -21,21 +21,22 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  */
+import Foundation
 
-import UIKit
-
-class PaddingLabel: UILabel {
-
-    public var padding = UIEdgeInsets(top: 3, left: 8, bottom: 3, right: 8)
+public final class DJLLogFilterSettings {
     
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: padding))
-    }
-
-    override var intrinsicContentSize: CGSize {
-        let size = super.intrinsicContentSize
-        let width = size.width + padding.left + padding.right
-        let heigth = size.height + padding.top + padding.bottom
-        return CGSize(width: width, height: heigth)
+    public var labels: [String] = []
+    public var selectedLabels: [String] = []
+    public var levels: [DJLLogger.Level] = DJLLogger.Level.allCases
+    
+    public var isPaused: Bool = false
+    
+    var active: Bool {
+        
+        if selectedLabels.isEmpty == false {
+            return true
+        }
+        
+        return levels.count != DJLLogger.Level.allCases.count
     }
 }

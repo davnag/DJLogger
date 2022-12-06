@@ -24,7 +24,6 @@
 
 import Foundation
 
-
 public struct DJLFileReader {
     
     public enum DJLFileReaderError: Error {

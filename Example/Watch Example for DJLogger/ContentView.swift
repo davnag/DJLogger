@@ -46,7 +46,7 @@ struct ContentView: View {
         }
         .padding()
         .sheet(isPresented: $isPresentingsLogsView) {
-            DJLLogView()
+            DJLLogsView()
         }
         .onAppear {
             viewModel.log("On Appear")
