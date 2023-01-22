@@ -56,6 +56,8 @@ struct DJLLogView: View {
                         Text(log.label)
                             .font(.caption2)
                             .foregroundColor(.blue)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
                         
                         Text(log.date, style: .time)
                             .font(.caption)
@@ -87,6 +89,25 @@ struct DJLLogView: View {
                     .font(.system(size: 11))
                     .italic()
                     .foregroundColor(.secondary)
+                
+                
+                HStack {
+                    
+                    Spacer()
+                    
+                    ShareLink(item: log.logText()) {
+                        Image(systemName: "text.justify.trailing")
+                            .font(.footnote)
+                    }
+                    .buttonStyle(.plain)
+                    
+                    ShareLink(item: log.fileURL) {
+                        Image(systemName: "arrow.up.doc")
+                            .font(.footnote)
+                    }
+                    .buttonStyle(.plain)
+
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

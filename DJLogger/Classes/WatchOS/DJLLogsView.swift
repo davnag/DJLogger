@@ -37,6 +37,9 @@ public struct DJLLogsView: View {
     
     @State
     private var isPresentingFiltersSheet: Bool = false
+    
+    @State
+    private var isPresentingShareSheet: Bool = false
 
     @StateObject
     private var viewModel: DJLLogsViewModel
@@ -115,6 +118,8 @@ public struct DJLLogsView: View {
                 
                 DJLLogsMenuView {
                     isPresentingFiltersSheet = true
+                } shareAction: {
+                    isPresentingShareSheet = true
                 } clearAction: {
                     isPresentingDeleteAllLogsDialog = true
                 }
@@ -123,6 +128,10 @@ public struct DJLLogsView: View {
                 
                 DJLLogsFilterView(settings: viewModel.settings)
             }
+            .sheet(isPresented: $isPresentingShareSheet) {
+                
+                DJLLogsShareMenuView(viewModel: viewModel)
+            }
             .confirmationDialog("Do you want to clear all logs?", isPresented: $isPresentingDeleteAllLogsDialog) {
                 
                 Button("Yes", role: .destructive) {
@@ -130,70 +139,6 @@ public struct DJLLogsView: View {
                 }
             }
         }
-    }
-}
-
-// MARK: - DJLLogsMenuView
-
-struct DJLLogsMenuView: View {
-    
-    private enum MenuAction {
-        case none
-        case filter
-        case clear
-    }
-    
-    @State
-    private var menuAction: MenuAction = .none
-    
-    @Environment(\.dismiss)
-    private var dismiss
-    
-    var filterAction: () -> Void
-    
-    var clearAction: () -> Void
-
-    init(filterAction: @escaping () -> Void, clearAction: @escaping () -> Void) {
-        self.filterAction = filterAction
-        self.clearAction = clearAction
-    }
-    
-    var body: some View {
-        
-        ScrollView {
-            
-            Button {
-                menuAction = .filter
-                dismiss()
-            } label: {
-                Label("Filters", systemImage: "line.3.horizontal.decrease.circle")
-            }
-
-            Button(role: .destructive) {
-                menuAction = .clear
-                dismiss()
-            } label: {
-                Label("Clear Logs", systemImage: "trash")
-            }
-
-            Button("Cancel", role: .cancel) {
-                dismiss()
-            }
-            .padding(.top)
-        }
-        .onDisappear {
-            
-            switch menuAction {
-            case .filter:
-                filterAction()
-            case .clear:
-                clearAction()
-            default:
-                break
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Menu")
     }
 }
 

@@ -164,3 +164,38 @@ final class DJLLogsViewModel: ObservableObject {
         }
     }
 }
+
+extension DJLLogsViewModel {
+    
+    struct DJSharableLogFile: Identifiable {
+        
+        var id: URL {
+            url
+        }
+        
+        let name: String
+        let url: URL
+        
+        func text() -> String {
+            
+            guard let data = try? Data(contentsOf: url) else {
+                return ""
+            }
+            
+            let text = String(data: data, encoding: .utf8)
+            
+            return text ?? ""
+        }
+    }
+    
+    func files() -> [DJSharableLogFile] {
+        
+        guard let logFilesURLs = try? DJLFileReader.logFilesURLs() else {
+            return []
+        }
+        
+        let files = logFilesURLs.compactMap({ DJSharableLogFile(name: $0.lastPathComponent, url: $0) })
+        
+        return files
+    }
+}
