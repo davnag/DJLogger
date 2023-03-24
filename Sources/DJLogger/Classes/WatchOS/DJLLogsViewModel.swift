@@ -1,3 +1,4 @@
+#if os(watchOS)
 /*
  The MIT License (MIT)
 
@@ -199,3 +200,4 @@ extension DJLLogsViewModel {
         return files
     }
 }
+#endif

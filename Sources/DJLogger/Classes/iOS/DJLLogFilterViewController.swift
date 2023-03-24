@@ -1,3 +1,5 @@
+#if os(iOS)
+
 /*
  The MIT License (MIT)
 
@@ -23,8 +25,6 @@
  */
 
 import UIKit
-
-#if os(iOS)
 
 public final class DJLLogFilterViewController: UITableViewController {
     

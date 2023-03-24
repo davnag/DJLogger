@@ -1,3 +1,4 @@
+#if os(watchOS)
 /*
  The MIT License (MIT)
 
@@ -149,3 +150,4 @@ struct DJLLogsView_Previews: PreviewProvider {
         DJLLogsView()
     }
 }
+#endif

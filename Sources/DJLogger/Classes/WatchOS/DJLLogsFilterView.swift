@@ -1,3 +1,4 @@
+#if os(watchOS)
 //
 //  DJLLogsFilterView.swift
 //  DJLogger-watchOS
@@ -123,3 +124,4 @@ struct DJLLogsFilterView_Previews: PreviewProvider {
         DJLLogsFilterView(settings: DJLLogFilterSettings())
     }
 }
+#endif

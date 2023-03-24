@@ -12,12 +12,12 @@
 		3C4C21C1293DE1B60054605F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C21C0293DE1B60054605F /* ContentView.swift */; };
 		3C4C21C3293DE1B60054605F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4C21C2293DE1B60054605F /* Assets.xcassets */; };
 		3C4C21C6293DE1B60054605F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4C21C5293DE1B60054605F /* Preview Assets.xcassets */; };
+		3CF3035F29CD89530098F950 /* DJLoggerTests in Resources */ = {isa = PBXBuildFile; fileRef = 3CF3035E29CD89530098F950 /* DJLoggerTests */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		737D292589371F8DB21F9C34 /* Pods_DJLogger_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4C21D4293DF1750054605F /* Pods_DJLogger_Example.framework */; };
 		9DADD475E4087BEF1EA3AA6D /* Pods_DJLogger_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ACF148AC7C21E38E6ACB93 /* Pods_DJLogger_Example.framework */; };
 		C7266F02BBC766709141FDF8 /* Pods_DJLogger_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E535F147D275A943488E056B /* Pods_DJLogger_Tests.framework */; };
@@ -68,6 +68,7 @@
 		3C4C21C5293DE1B60054605F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C4C21D0293DF1680054605F /* DJLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DJLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C4C21D4293DF1750054605F /* Pods_DJLogger_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DJLogger_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF3035E29CD89530098F950 /* DJLoggerTests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DJLoggerTests; path = ../../Tests/DJLoggerTests; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DJLogger_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJLogger_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* DJLogger_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DJLogger_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		65A3C612142819D3B19AEBE6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7C25F1F0FFF7894AF93A4059 /* Pods-DJLogger_Watch_Example_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogger_Watch_Example_App.release.xcconfig"; path = "Target Support Files/Pods-DJLogger_Watch_Example_App/Pods-DJLogger_Watch_Example_App.release.xcconfig"; sourceTree = "<group>"; };
 		85D90B72640257225A938C93 /* Pods-DJLogger_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJLogger_Example.debug.xcconfig"; path = "Target Support Files/Pods-DJLogger_Example/Pods-DJLogger_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				3CF3035E29CD89530098F950 /* DJLoggerTests */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -401,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF3035F29CD89530098F950 /* DJLoggerTests in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +535,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

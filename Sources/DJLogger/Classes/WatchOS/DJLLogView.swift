@@ -1,3 +1,4 @@
+#if os(watchOS)
 /*
  The MIT License (MIT)
 
@@ -128,3 +129,4 @@ struct DJLLogView: View {
 //        DJLLogView()
 //    }
 //}
+#endif

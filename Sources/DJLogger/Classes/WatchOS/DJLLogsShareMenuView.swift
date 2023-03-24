@@ -1,3 +1,4 @@
+#if os(watchOS)
 //
 //  DJLLogsShareMenuView.swift
 //  DJLogger-watchOS
@@ -54,3 +55,4 @@ struct DJLLogsShareMenuView: View {
 //        DJLLogsShareMenuView()
 //    }
 //}
+#endif
