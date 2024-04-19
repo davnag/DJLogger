@@ -18,6 +18,7 @@
 		371FC952FDB00A905FC1628B0D8D12B4 /* DJLFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5905CFF47D3564652B8770217D98F1C3 /* DJLFileReader.swift */; };
 		3CB40EA6297ACD460023477B /* DJLLogsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB40EA5297ACD460023477B /* DJLLogsMenuView.swift */; };
 		3CB40EA8297ACD650023477B /* DJLLogsShareMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB40EA7297ACD650023477B /* DJLLogsShareMenuView.swift */; };
+		3CB8AF912BCD106C00F0D2A5 /* OSLogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8AF902BCD106C00F0D2A5 /* OSLogHandler.swift */; };
 		3CBB64C5293F8FEF009F71A7 /* DJLLogFilterSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A63286E84DEB3B4A3A7ECF93A37473 /* DJLLogFilterSettings.swift */; };
 		3CBB64DC293F9D12009F71A7 /* DJLLogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64D6293F9D12009F71A7 /* DJLLogFilterViewController.swift */; };
 		3CBB64DD293F9D12009F71A7 /* DJLPreviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB64D7293F9D12009F71A7 /* DJLPreviewHandler.swift */; };
@@ -104,6 +105,7 @@
 		38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DJLLogHandlerProtocol.swift; sourceTree = "<group>"; };
 		3CB40EA5297ACD460023477B /* DJLLogsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogsMenuView.swift; sourceTree = "<group>"; };
 		3CB40EA7297ACD650023477B /* DJLLogsShareMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJLLogsShareMenuView.swift; sourceTree = "<group>"; };
+		3CB8AF902BCD106C00F0D2A5 /* OSLogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLogHandler.swift; sourceTree = "<group>"; };
 		3CBB64D6293F9D12009F71A7 /* DJLLogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLLogFilterViewController.swift; sourceTree = "<group>"; };
 		3CBB64D7293F9D12009F71A7 /* DJLPreviewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJLPreviewHandler.swift; sourceTree = "<group>"; };
 		3CBB64D9293F9D12009F71A7 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				38D17ACC0DC6A41DD8A39205EB005929 /* DJLLogHandlerProtocol.swift */,
+				3CB8AF8E2BCD104400F0D2A5 /* OSLogHandler */,
 				5410658AE174CC1DF0CEBB6C799DA838 /* ConsoleHandler */,
 				8EE15D57CC5D8CAE5461AC395786C684 /* FileHandler */,
 			);
@@ -267,6 +270,14 @@
 			);
 			name = "Pods-DJLogger_Watch_Example_App";
 			path = "Target Support Files/Pods-DJLogger_Watch_Example_App";
+			sourceTree = "<group>";
+		};
+		3CB8AF8E2BCD104400F0D2A5 /* OSLogHandler */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8AF902BCD106C00F0D2A5 /* OSLogHandler.swift */,
+			);
+			path = OSLogHandler;
 			sourceTree = "<group>";
 		};
 		3CBB64D5293F9D12009F71A7 /* iOS */ = {
@@ -750,6 +761,7 @@
 				3CBB64EB293FD829009F71A7 /* DJLLogFilterSection.swift in Sources */,
 				D940F0AC154F816FC680674D7B5AEC1A /* DJLLogger+extensions.swift in Sources */,
 				76F7F735BD84BB88AF3E99CD8562616A /* DJLLoggerConfiguration.swift in Sources */,
+				3CB8AF912BCD106C00F0D2A5 /* OSLogHandler.swift in Sources */,
 				4E2E13178B43882DC12951B979765429 /* DJLLogHandlerProtocol.swift in Sources */,
 				3CBB64DF293F9D12009F71A7 /* DJLLogCell.swift in Sources */,
 				485CEF4A74C96B5DA68F1D06BC959CDE /* DJLogger-iOS-dummy.m in Sources */,

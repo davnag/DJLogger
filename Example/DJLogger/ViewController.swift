@@ -31,7 +31,15 @@ class ViewController: UIViewController {
     private let logger = DJLLogger("View", [DJLConsoleHandler(), DJLFileHandler("app")])
     private let backgroundLogger = DJLLogger("Background", [DJLConsoleHandler(), DJLFileHandler("background")])
     private let repeatingLogger = DJLLogger("Repeating", [DJLConsoleHandler(), DJLFileHandler("repeater")])
-            
+    
+    var osLogger: DJLLogger? {
+        if #available(iOS 14.0, *) {
+            return DJLLogger("OSLogger", [OSLogHandler()])
+        } else {
+            return nil
+        }
+    }
+
     private var cancelBag = Set<AnyCancellable>()
 
     override func viewDidLoad() {
@@ -40,6 +48,7 @@ class ViewController: UIViewController {
         //DJLLoggerConfiguration.logEnabled = false
         
         logger.debug("View Did Load")
+        osLogger?.debug("View Did Load")
 
         becomeFirstResponder()
         
