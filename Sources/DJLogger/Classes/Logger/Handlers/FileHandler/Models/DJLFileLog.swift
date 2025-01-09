@@ -46,6 +46,10 @@ public struct DJLFileLog: Identifiable {
 
     init?(fileURL: URL, index: Int, content: [String]) {
         
+        guard content.count == 6 else {
+            return nil
+        }
+        
         self.index = index
         self.fileURL = fileURL
         
