@@ -6,7 +6,9 @@ let package = Package(
     name: "DJLogger",
     platforms: [
         .iOS(.v15),
-        .watchOS(.v9)
+        .watchOS(.v9),
+        .macOS(.v12),
+        .macCatalyst(.v13)
     ],
     products: [
         .library(
