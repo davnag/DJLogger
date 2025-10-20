@@ -4,6 +4,8 @@ import SwiftUI
 public struct DJLLogRepresentableView: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UIViewController
     
+    public init() { }
+    
     public func makeUIViewController(context: Context) -> UIViewController {
         let controller = DJLLogViewController()
         return UINavigationController(rootViewController: controller)
