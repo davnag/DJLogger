@@ -66,7 +66,7 @@ extension DJLLogFilterViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
 
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .plain, target: self, action: #selector(actionCloseButton))
+            UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(actionCloseButton))
         ]
     }
 }

@@ -154,39 +154,59 @@ extension DJLLogViewController {
     
     private func setupBarButtonItems() {
         
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "xmark.circle.fill"), style: .plain, target: self, action: #selector(closeButtonAction))
+        navigationItem.leftBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonAction))
         ]
         
-        navigationItem.leftBarButtonItems = [
-            setupMenuBarButtonItem(),
-            setupTrashBarButtonItem(),
-            setupPlayPauseBarButtonItem(),
+        let menu = UIMenu(
+            title: "",
+            image: UIImage(systemName: ""),
+            children: [
+                setupPlayPauseBarButtonItem(),
+                setupViewLogsBarButtonItem(),
+                setupTrashBarButtonItem()
+            ]
+        )
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(title: "Menu", image: UIImage(systemName: "ellipsis"), primaryAction: nil, menu: menu),
+            UIBarButtonItem(systemItem: .fixedSpace),
             setupFilterBarButtonItem()
+
         ]
     }
     
-    private func setupMenuBarButtonItem() -> UIBarButtonItem {
-        UIBarButtonItem(image: UIImage(systemName: "switch.2"), style: .plain, target: self, action: #selector(menuButtonAction))
+    private func setupViewLogsBarButtonItem() -> UIAction {
+        UIAction(title: "View Logs", image: UIImage(systemName: "doc.on.doc")) { [weak self] _ in
+            self?.viewLogsAction()
+        }
     }
     
-    private func setupTrashBarButtonItem() -> UIBarButtonItem {
-        UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(trashButtonAction))
+    private func setupTrashBarButtonItem() -> UIAction {
+        UIAction(title: "Delete Logs", image: UIImage(systemName: "trash")) { [weak self] _ in
+            self?.trashButtonAction()
+        }
     }
     
     private func setupFilterBarButtonItem() -> UIBarButtonItem {
         if settings.active {
-            return UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle.fill"), style: .plain, target: self, action: #selector(filterButtonAction))
+            let button = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease"), style: .plain, target: self, action: #selector(filterButtonAction))
+            button.tintColor = UIColor.blue
+            return button
         } else {
-            return UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease.circle"), style: .plain, target: self, action: #selector(filterButtonAction))
+            return UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3.decrease"), style: .plain, target: self, action: #selector(filterButtonAction))
         }
     }
     
-    private func setupPlayPauseBarButtonItem() -> UIBarButtonItem {
+    private func setupPlayPauseBarButtonItem() -> UIAction {
         if settings.isPaused {
-            return UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(playPauseButtonAction))
+            return UIAction(title: "Start Log Refresh", image: UIImage(systemName: "play.fill")) { [weak self] _ in
+                self?.playPauseButtonAction()
+            }
         } else {
-            return UIBarButtonItem(image: UIImage(systemName: "pause.fill"), style: .plain, target: self, action: #selector(playPauseButtonAction))
+            return UIAction(title: "Pause Log Refresh", image: UIImage(systemName: "pause.fill")) { [weak self] _ in
+                self?.playPauseButtonAction()
+            }
         }
     }
 }
@@ -322,32 +342,21 @@ extension DJLLogViewController {
 extension DJLLogViewController {
 
     @objc
-    private func menuButtonAction() {
+    private func viewLogsAction() {
 
+        guard let files = try? DJLFileReader.logFilesURLs() else {
+            return
+        }
+        
         stopRefreshTimer()
         
-        let controller = UIAlertController(title: "Logs", message: nil, preferredStyle: .actionSheet)
+        let items = files.compactMap({ DJLPreviewHandler.PreviewItem(title: $0.lastPathComponent, url: $0) })
         
-        controller.addAction(UIAlertAction(title: "View log files", style: .default) { [self] _ in
-            
-            guard let files = try? DJLFileReader.logFilesURLs() else {
-                return
-            }
-            
-            let items = files.compactMap({ DJLPreviewHandler.PreviewItem(title: $0.lastPathComponent, url: $0) })
-            
-            self.previewHandler = DJLPreviewHandler(items: items) {
-                self.startRefreshTimer()
-                self.previewHandler = nil
-            }
-            self.previewHandler?.present(parent: self)
-        })
-
-        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        self.previewHandler = DJLPreviewHandler(items: items) {
             self.startRefreshTimer()
-        })
-        
-        present(controller, animated: true)
+            self.previewHandler = nil
+        }
+        self.previewHandler?.present(parent: self)
     }
     
     @objc
