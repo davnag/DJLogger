@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 import SwiftUI
 
@@ -21,3 +22,4 @@ public struct DJLLogRepresentableView: UIViewControllerRepresentable {
 #Preview {
     DJLLogRepresentableView()
 }
+#endif
